@@ -3,9 +3,22 @@
 Replaces global _INDEXED_RAG state with proper encapsulation.
 Manages model lifecycle and provides clean API for RAG operations.
 """
-from typing import Dict, List, Optional, Tuple
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional, Tuple
 
 from PIL import Image
+
+
+@dataclass
+class QueryResult:
+    """Detailed result from a RAG query."""
+
+    answer: str
+    retrieved_images: List[Image.Image]
+    # Retrieved pages before overlap expansion: List of (doc_id, page_num)
+    retrieved_pages: List[Tuple[int, int]] = field(default_factory=list)
+    # Retrieved pages after overlap expansion
+    expanded_pages: List[Tuple[int, int]] = field(default_factory=list)
 
 from config import AppConfig, get_config
 from models.loader import ModelLoader
@@ -98,6 +111,8 @@ class RAGService:
         text_query: str,
         top_k: Optional[int] = None,
         max_new_tokens: Optional[int] = None,
+        pages_before: Optional[int] = None,
+        pages_after: Optional[int] = None,
     ) -> Tuple[str, List[Image.Image]]:
         """Execute RAG query and return answer with retrieved images.
 
@@ -105,6 +120,8 @@ class RAGService:
             text_query: User question
             top_k: Number of pages to retrieve (uses config default if None)
             max_new_tokens: Maximum tokens for generation (uses config default if None)
+            pages_before: Pages to include before each result (uses config default if None)
+            pages_after: Pages to include after each result (uses config default if None)
 
         Returns:
             Tuple of (answer_text, retrieved_images)
@@ -126,8 +143,13 @@ class RAGService:
         # Retrieve relevant pages
         results = self._retrieval_model.search(text_query, k=top_k)
 
+        # Expand results with adjacent pages for cross-page content
+        expanded_results = self._expand_with_overlap(
+            results, pages_before=pages_before, pages_after=pages_after
+        )
+
         # Map results to images
-        retrieved_images = self._get_images_from_results(results)
+        retrieved_images = self._get_images_from_results(expanded_results)
 
         # Generate answer
         texts = self._vl_model.generate(
@@ -138,6 +160,73 @@ class RAGService:
 
         answer = texts[0] if texts else ""
         return answer, retrieved_images
+
+    def query_with_details(
+        self,
+        text_query: str,
+        top_k: Optional[int] = None,
+        max_new_tokens: Optional[int] = None,
+        pages_before: Optional[int] = None,
+        pages_after: Optional[int] = None,
+    ) -> QueryResult:
+        """Execute RAG query and return detailed results including retrieval info.
+
+        Args:
+            text_query: User question
+            top_k: Number of pages to retrieve (uses config default if None)
+            max_new_tokens: Maximum tokens for generation (uses config default if None)
+            pages_before: Pages to include before each result (uses config default if None)
+            pages_after: Pages to include after each result (uses config default if None)
+
+        Returns:
+            QueryResult with answer, images, and retrieval information
+
+        Raises:
+            RuntimeError: If not indexed or models not loaded
+        """
+        top_k = top_k or self.config.rag.default_top_k
+        max_new_tokens = max_new_tokens or self.config.rag.default_max_new_tokens
+
+        if not self.is_indexed:
+            raise RuntimeError(
+                "Documents must be indexed first. Call index_documents()."
+            )
+
+        # Ensure VL model is loaded
+        self.initialize_vl()
+
+        # Retrieve relevant pages
+        results = self._retrieval_model.search(text_query, k=top_k)
+
+        # Extract retrieved pages as (doc_id, page_num) tuples
+        retrieved_pages = [(r["doc_id"], r["page_num"]) for r in results]
+
+        # Expand results with adjacent pages for cross-page content
+        expanded_results = self._expand_with_overlap(
+            results, pages_before=pages_before, pages_after=pages_after
+        )
+
+        # Extract expanded pages as tuples
+        expanded_pages = [(r["doc_id"], r["page_num"]) for r in expanded_results]
+
+        # Map results to images
+        retrieved_images = self._get_images_from_results(expanded_results)
+
+        # Generate answer
+        texts = self._vl_model.generate(
+            images=retrieved_images,
+            text_query=text_query,
+            max_new_tokens=max_new_tokens,
+        )
+
+        answer = texts[0] if texts else ""
+
+        return QueryResult(
+            answer=answer,
+            retrieved_images=retrieved_images,
+            retrieved_pages=retrieved_pages,
+            expanded_pages=expanded_pages,
+        )
 
     def _get_images_from_results(self, results: List[dict]) -> List[Image.Image]:
         """Map retrieval results to PIL images.
@@ -157,3 +246,54 @@ class RAGService:
                 if 0 <= page_idx < len(self._all_images[doc_id]):
                     images.append(self._all_images[doc_id][page_idx])
         return images
+
+    def _expand_with_overlap(
+        self,
+        results: List[dict],
+        pages_before: Optional[int] = None,
+        pages_after: Optional[int] = None,
+    ) -> List[dict]:
+        """Expand search results to include adjacent pages.
+
+        Args:
+            results: Original search results with 'doc_id' and 'page_num'
+            pages_before: Pages to include before each result (uses config if None)
+            pages_after: Pages to include after each result (uses config if None)
+
+        Returns:
+            Expanded results with adjacent pages, deduplicated and sorted
+        """
+        pages_before = pages_before if pages_before is not None else self.config.rag.pages_before
+        pages_after = pages_after if pages_after is not None else self.config.rag.pages_after
+
+        # Skip if no overlap needed
+        if pages_before == 0 and pages_after == 0:
+            return results
+
+        seen: set = set()
+        expanded: List[dict] = []
+
+        for result in results:
+            doc_id = result["doc_id"]
+            page_num = result["page_num"]
+
+            # Get total pages for this document
+            if doc_id not in self._all_images:
+                continue
+            total_pages = len(self._all_images[doc_id])
+
+            # Calculate page range with boundary handling
+            start_page = max(1, page_num - pages_before)
+            end_page = min(total_pages, page_num + pages_after)
+
+            # Add pages in range
+            for p in range(start_page, end_page + 1):
+                key = (doc_id, p)
+                if key not in seen:
+                    seen.add(key)
+                    expanded.append({"doc_id": doc_id, "page_num": p})
+
+        # Sort by document order (doc_id, then page_num)
+        expanded.sort(key=lambda x: (x["doc_id"], x["page_num"]))
+
+        return expanded

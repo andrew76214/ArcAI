@@ -1,17 +1,23 @@
 """Configuration for evaluation module."""
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Literal
 
 
 @dataclass
 class JudgeConfig:
     """Configuration for LLM-as-a-Judge."""
 
-    model_name: str = "gpt-4o"
+    # Judge type: "ollama" or "openai"
+    judge_type: Literal["ollama", "openai"] = "ollama"
+    # Model name (e.g., "llama3.1:8b" for Ollama, "gpt-4o" for OpenAI)
+    model_name: str = "llama3.1:8b"
+    # API key environment variable (only for OpenAI)
     api_key_env_var: str = "OPENAI_API_KEY"
+    # Ollama server URL
+    base_url: str = "http://localhost:11434"
     temperature: float = 0.0
     max_retries: int = 3
-    timeout: int = 60
+    timeout: int = 120
 
 
 @dataclass

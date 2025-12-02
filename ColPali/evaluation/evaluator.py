@@ -9,8 +9,14 @@ from typing import Any, Callable, Dict, List, Optional
 from .config import EvaluationConfig
 from .test_case import TestCase, TestDataset
 from .metrics.generation_metrics import GenerationEvalResult, GenerationMetricsAggregator
+from .metrics.retrieval_metrics import (
+    RetrievalEvalResult,
+    RetrievalMetricsAggregator,
+    calculate_retrieval_metrics,
+)
 from .judges.base_judge import BaseJudge
 from .judges.openai_judge import OpenAIJudge
+from .judges.ollama_judge import OllamaJudge
 
 
 @dataclass
@@ -24,6 +30,7 @@ class EvaluationResult:
     generation_metrics: Dict[str, Any]
     latency_ms: float
     metadata: Dict[str, Any] = field(default_factory=dict)
+    retrieval_metrics: Optional[Dict[str, Any]] = None
 
 
 @dataclass
@@ -33,6 +40,7 @@ class EvaluationReport:
     dataset_name: str
     total_test_cases: int
     aggregate_generation_metrics: Dict[str, float]
+    aggregate_retrieval_metrics: Dict[str, float]
     individual_results: List[EvaluationResult]
     evaluation_config: Dict[str, Any]
     timestamp: str
@@ -60,7 +68,10 @@ class RAGEvaluator:
     def judge(self) -> BaseJudge:
         """Lazy-load judge based on configuration."""
         if self._judge is None:
-            self._judge = OpenAIJudge(self.config.judge)
+            if self.config.judge.judge_type == "ollama":
+                self._judge = OllamaJudge(self.config.judge)
+            else:
+                self._judge = OpenAIJudge(self.config.judge)
         return self._judge
 
     def evaluate_single(self, test_case: TestCase) -> EvaluationResult:
@@ -74,8 +85,8 @@ class RAGEvaluator:
         """
         start_time = time.time()
 
-        # Run RAG query
-        generated_answer, _ = self.rag_service.query(test_case.question)
+        # Run RAG query with detailed results
+        query_result = self.rag_service.query_with_details(test_case.question)
 
         latency_ms = (time.time() - start_time) * 1000
 
@@ -83,17 +94,27 @@ class RAGEvaluator:
         gen_result = self.judge.evaluate_generation(
             question=test_case.question,
             expected_answer=test_case.expected_answer,
-            generated_answer=generated_answer,
+            generated_answer=query_result.answer,
         )
+
+        # Calculate retrieval metrics if expected pages are provided
+        retrieval_metrics = None
+        if test_case.expected_pages:
+            retrieval_result = calculate_retrieval_metrics(
+                retrieved_pages=query_result.retrieved_pages,
+                expected_pages=test_case.expected_pages,
+            )
+            retrieval_metrics = retrieval_result.to_dict()
 
         return EvaluationResult(
             test_case_id=test_case.id,
             question=test_case.question,
-            generated_answer=generated_answer,
+            generated_answer=query_result.answer,
             expected_answer=test_case.expected_answer,
             generation_metrics=gen_result.to_dict(),
             latency_ms=latency_ms,
             metadata=test_case.metadata,
+            retrieval_metrics=retrieval_metrics,
         )
 
     def evaluate_dataset(
@@ -112,6 +133,7 @@ class RAGEvaluator:
         """
         results = []
         generation_agg = GenerationMetricsAggregator()
+        retrieval_agg = RetrievalMetricsAggregator()
 
         for i, test_case in enumerate(dataset.test_cases):
             result = self.evaluate_single(test_case)
@@ -129,6 +151,25 @@ class RAGEvaluator:
                 )
             )
 
+            # Aggregate retrieval metrics if available
+            if result.retrieval_metrics:
+                retrieval_agg.add_result(
+                    RetrievalEvalResult(
+                        retrieved_pages=[
+                            (p["doc_id"], p["page_num"])
+                            for p in result.retrieval_metrics["retrieved_pages"]
+                        ],
+                        expected_pages=[
+                            (p["doc_id"], p["page_num"])
+                            for p in result.retrieval_metrics["expected_pages"]
+                        ],
+                        hit=result.retrieval_metrics["hit"],
+                        recall=result.retrieval_metrics["recall"],
+                        precision=result.retrieval_metrics["precision"],
+                        mrr=result.retrieval_metrics["mrr"],
+                    )
+                )
+
             if progress_callback:
                 progress_callback(i + 1, len(dataset.test_cases))
 
@@ -140,6 +181,7 @@ class RAGEvaluator:
             dataset_name=dataset.dataset_name,
             total_test_cases=len(dataset.test_cases),
             aggregate_generation_metrics=generation_agg.aggregate(),
+            aggregate_retrieval_metrics=retrieval_agg.aggregate(),
             individual_results=results,
             evaluation_config=self._config_to_dict(),
             timestamp=datetime.now().isoformat(),
@@ -154,25 +196,26 @@ class RAGEvaluator:
         os.makedirs(self.config.output_dir, exist_ok=True)
         path = os.path.join(self.config.output_dir, f"{result.test_case_id}.json")
 
+        data = {
+            "test_case_id": result.test_case_id,
+            "question": result.question,
+            "generated_answer": result.generated_answer,
+            "expected_answer": result.expected_answer,
+            "generation_metrics": result.generation_metrics,
+            "latency_ms": result.latency_ms,
+            "metadata": result.metadata,
+        }
+
+        if result.retrieval_metrics:
+            data["retrieval_metrics"] = result.retrieval_metrics
+
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(
-                {
-                    "test_case_id": result.test_case_id,
-                    "question": result.question,
-                    "generated_answer": result.generated_answer,
-                    "expected_answer": result.expected_answer,
-                    "generation_metrics": result.generation_metrics,
-                    "latency_ms": result.latency_ms,
-                    "metadata": result.metadata,
-                },
-                f,
-                indent=2,
-                ensure_ascii=False,
-            )
+            json.dump(data, f, indent=2, ensure_ascii=False)
 
     def _config_to_dict(self) -> Dict[str, Any]:
         """Convert config to serializable dict."""
         return {
+            "judge_type": self.config.judge.judge_type,
             "judge_model": self.config.judge.model_name,
             "output_dir": self.config.output_dir,
         }
