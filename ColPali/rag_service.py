@@ -49,6 +49,10 @@ class RAGService:
         if self._retrieval_model is None:
             raw_model = self._loader.load_retrieval_model()
             self._retrieval_model = RetrievalModel(raw_model)
+            
+            # Check if index already exists
+            if self._retrieval_model._check_existing_index(self.config.storage.index_name):
+                self._retrieval_model._indexed = True
 
     def initialize_vl(self) -> None:
         """Load vision-language model (lazy initialization)."""

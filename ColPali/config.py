@@ -37,13 +37,15 @@ class AppConfig:
     rag: RAGConfig = field(default_factory=RAGConfig)
 
 
-# Default IKEA PDFs for demo
+# Default PDFs from local data directory
 DEFAULT_PDFS: Dict[str, str] = {
-    "MALM": "https://www.ikea.com/us/en/assembly_instructions/malm-4-drawer-chest-white__AA-2398381-2-100.pdf",
-    "BILLY": "https://www.ikea.com/us/en/assembly_instructions/billy-bookcase-white__AA-1844854-6-2.pdf",
-    "BOAXEL": "https://www.ikea.com/us/en/assembly_instructions/boaxel-wall-upright-white__AA-2341341-2-100.pdf",
-    "ADILS": "https://www.ikea.com/us/en/assembly_instructions/adils-leg-white__AA-844478-6-2.pdf",
-    "MICKE": "https://www.ikea.com/us/en/assembly_instructions/micke-desk-white__AA-476626-10-100.pdf",
+    "ARCMIS_v5_Operation_Manual": "data/ARCMIS_v5_Operation_Manual.pdf",
+    "IT_help_desk": "data/IT_help_desk.pdf",
+    "MALM": "data/MALM.pdf",
+    "BILLY": "data/BILLY.pdf",
+    "BOAXEL": "data/BOAXEL.pdf",
+    "ADILS": "data/ADILS.pdf",
+    "MICKE": "data/MICKE.pdf",
 }
 
 

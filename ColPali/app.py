@@ -13,7 +13,7 @@ import gradio as gr
 from PIL import Image
 
 from config import get_config, DEFAULT_PDFS
-from storage import download_pdfs, add_file_to_storage, list_available_files
+from storage import add_file_to_storage, list_available_files
 from rag_service import RAGService
 
 # Single service instance for the application
@@ -29,11 +29,26 @@ def get_service() -> RAGService:
 
 
 def prepare_data() -> str:
-    """Download example PDFs and index them."""
+    """Load local PDFs from data directory and index them."""
     config = get_config()
     try:
-        download_pdfs(DEFAULT_PDFS, config.storage.data_dir)
-        msg = get_service().index_documents(overwrite=True)
+        service = get_service()
+        
+        # Check if already indexed
+        if service.is_indexed:
+            files = list_available_files(config.storage.data_dir)
+            return f"Data already indexed. Files: {', '.join(files)}"
+        
+        # Verify local PDF files exist
+        missing = []
+        for name, path in DEFAULT_PDFS.items():
+            if not os.path.exists(path):
+                missing.append(f"{name} ({path})")
+        
+        if missing:
+            return f"Missing files: {', '.join(missing)}"
+        
+        msg = service.index_documents(overwrite=False)
         files = list_available_files(config.storage.data_dir)
         return f"Data prepared. {msg} Files: {', '.join(files)}"
     except Exception as e:
@@ -109,6 +124,13 @@ def run_query(
 def build_interface() -> gr.Blocks:
     """Build Gradio interface."""
     logo_path = os.path.join(os.path.dirname(__file__), "ArcAI_logo.jpg")
+
+    # Auto-initialize data on startup
+    try:
+        if not get_service().is_indexed:
+            prepare_data()
+    except Exception as e:
+        print(f"Warning: Failed to auto-index data on startup: {e}")
 
     with gr.Blocks() as demo:
         with gr.Row():
