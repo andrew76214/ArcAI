@@ -1,4 +1,5 @@
 """Ollama-based LLM-as-a-Judge implementation."""
+import os
 import time
 from typing import Optional
 
@@ -7,6 +8,9 @@ import requests
 from .base_judge import BaseJudge
 from ..metrics.generation_metrics import GenerationEvalResult
 from ..config import JudgeConfig
+
+# Default Ollama URL, can be overridden by OLLAMA_HOST environment variable
+DEFAULT_OLLAMA_URL = "http://localhost:11434"
 
 
 GENERATION_JUDGE_PROMPT = """You are an expert evaluator assessing the quality of AI-generated answers in a document question-answering system.
@@ -73,12 +77,19 @@ class OllamaJudge(BaseJudge):
 
         Args:
             config: Judge configuration. Uses defaults if None.
+
+        Environment Variables:
+            OLLAMA_HOST: Override Ollama server URL (e.g., http://192.168.1.100:11434)
         """
         self.config = config or JudgeConfig(
             model_name="llama3.1:8b",
             api_key_env_var="",  # Ollama doesn't need API key
         )
-        self.base_url = getattr(self.config, "base_url", "http://localhost:11434")
+        # Priority: OLLAMA_HOST env var > config.base_url > default
+        self.base_url = os.environ.get(
+            "OLLAMA_HOST",
+            getattr(self.config, "base_url", DEFAULT_OLLAMA_URL)
+        )
 
     def _call_llm(self, prompt: str) -> str:
         """Call Ollama API with retry logic.
