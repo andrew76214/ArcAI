@@ -113,7 +113,9 @@ def run_query(
         service = get_service()
         if not service.is_indexed:
             # Auto-prepare if not indexed
-            prepare_data()
+            result = prepare_data()
+            if not service.is_indexed:
+                return f"Indexing failed: {result}", []
 
         answer, images = service.query(query, top_k=top_k, max_new_tokens=max_tokens)
         return answer, images

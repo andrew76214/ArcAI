@@ -41,11 +41,6 @@ class AppConfig:
 DEFAULT_PDFS: Dict[str, str] = {
     "ARCMIS_v5_Operation_Manual": "data/ARCMIS_v5_Operation_Manual.pdf",
     "IT_help_desk": "data/IT_help_desk.pdf",
-    "MALM": "data/MALM.pdf",
-    "BILLY": "data/BILLY.pdf",
-    "BOAXEL": "data/BOAXEL.pdf",
-    "ADILS": "data/ADILS.pdf",
-    "MICKE": "data/MICKE.pdf",
 }
 
 
