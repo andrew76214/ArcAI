@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-008",
+  "question": "Simple filter 在哪邊？",
+  "generated_answer": "根據提供的圖片內容，並未顯示「Simple filter」這個功能或按鈕。\n\n在第一張圖片中，展示了「AdmSlip Maintenance」和「AdmSlip Maintenance」的螢幕截圖，但沒有「Simple filter」的選項。在第二張圖片中，展示了「Shipping Transaction」和「Shipping List」的螢幕截圖，也沒有「Simple filter」的選項。在第三張圖片中，展示了「Normal Requisition」和「Customer Maintain」的螢幕截圖，同樣沒有「Simple filter」的選項。\n\n因此，根據提供的資料，無法確定「Simple filter」在哪邊。可能這個功能並不存在於這些螢幕截圖中，或者它被隱藏在其他未顯示的選項中。",
+  "expected_answer": "點選欄位，按右鍵 Data Process -> Simple filter",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER does not provide the correct location of 'Simple filter' as described in the REFERENCE ANSWER. It fails to mention the process of right-clicking on a field and selecting 'Data Process -> Simple filter'. The answer is mostly irrelevant to the question as it focuses on the absence of 'Simple filter' in the images rather than addressing the question directly. The coherence is somewhat maintained as the answer is understandable, but it is not structured to address the question effectively."
+  },
+  "latency_ms": 3240.070581436157,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

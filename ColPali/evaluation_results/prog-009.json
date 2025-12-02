@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-009",
+  "question": "Price Book (PO) maintain 是在哪支程式？",
+  "generated_answer": "根據提供的資料，並未明確指出「Price Book (PO) maintain」是哪支程式。在第0頁的列表中，有「Price Book (PO)」這個項目，但沒有標註其對應的程式名稱。同樣地，第1頁和第2頁也沒有提及這個項目與特定程式的關聯。因此，根據現有資訊，無法確定「Price Book (PO) maintain」是哪支程式。",
+  "expected_answer": "DT157",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 3.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The generated answer is incorrect as it fails to identify 'DT157' as the program for 'Price Book (PO) maintain'. It does not cover any key points from the reference answer, which is simply the program name. The relevance is somewhat maintained as it discusses the topic but fails to provide the correct information. The coherence is relatively high as the answer is clear and well-structured, but it ultimately does not provide the correct or complete information needed."
+  },
+  "latency_ms": 2110.668182373047,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-004",
+  "question": "Import file 的用途是什麼？Append Data 和 Update Destination 有什麼差別？",
+  "generated_answer": "在数据集成或ETL（Extract, Transform, Load）工具中，如 **Alteryx**、**Informatica**、**Talend**、**Microsoft Power BI** 或 **Google Data Studio** 等，**Import File**、**Append Data** 和 **Update Destination** 是三种常见的数据操作方式，它们的用途和区别如下：\n\n---\n\n## ✅ 1. Import File（导入文件）\n\n### 📌 用途：\n将外部文件（如 CSV、Excel、JSON、TXT 等）中的数据**导入到目标系统或数据表中**，通常用于**首次加载数据**或**初始化数据仓库**。\n\n### 🧩 特点：\n- 一般用于**首次加载**或**清空后重新加载**数据。\n- 通常会**覆盖目标表中的现有数据**（除非指定保留策略）。\n- 适用于**数据源是文件**，且目标是数据库或",
+  "expected_answer": "Append Data 是 insert 的概念，以地球畫面為主新增進來。Update Destination 是 update 的概念，以要 Import 的檔案為主。若 part no 勾選 key Match，表示以 part no 為主，檔案裡 part no 只能唯一不能重複，若重複則以地球上的排序順序更新（找第一筆去更新）",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The GENERATED ANSWER does not address the specific question about the differences between 'Append Data' and 'Update Destination' as described in the REFERENCE ANSWER. It instead provides a general explanation of 'Import File' in the context of data integration tools, which is not relevant to the specific concepts of 'Append Data' and 'Update Destination' as defined in the reference. The answer is somewhat coherent but lacks the necessary details and relevance to the question asked."
+  },
+  "latency_ms": 2747.2689151763916,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

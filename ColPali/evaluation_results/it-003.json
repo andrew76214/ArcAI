@@ -1,0 +1,19 @@
+{
+  "test_case_id": "it-003",
+  "question": "SO 無法存檔，出現 Schedule Forwarder To address is not defined 錯誤訊息，該怎麼處理？",
+  "generated_answer": "根據您提供的圖片和內容，此錯誤訊息「Schedule Forwarder To address is not defined」並未在任何圖片或文字中直接提及。然而，從上下文推斷，此錯誤通常發生在「PO Schedule approve」或「PO Schedule maintain」等與訂單排程相關的模組中，而這些模組在您提供的圖片中並未直接展示。\n\n在您提供的圖片中，有關於「PO Schedule approve」的說明（圖片 1），但沒有關於「Schedule Forwarder」的具體設定。因此，根據您提供的資訊，無法直接從圖片中找到解決此錯誤的方法。\n\n不過，根據一般ERP系統的邏輯，此錯誤通常意味著系統找不到預設的「Schedule Forwarder」地址。解決方法通常包括：\n\n1.  **檢查系統設定**：進入系統設定，確認「Schedule Forwarder」的地址是否已正確設定。\n2.  **檢查使用者權限",
+  "expected_answer": "進 FS019 找 SO 上的客戶資料，Ship to Add -> Forwarder 一定要有值，若沒有值請填入 None",
+  "generation_metrics": {
+    "correctness": 2.0,
+    "completeness": 2.0,
+    "relevance": 3.0,
+    "coherence": 3.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER does not accurately address the specific solution provided in the REFERENCE ANSWER, which is to check the 'Ship to Add -> Forwarder' field in FS019 and ensure it has a value. Instead, it provides a general approach to checking system settings and user permissions, which is not mentioned in the REFERENCE ANSWER. The GENERATED ANSWER is somewhat relevant as it discusses potential causes and solutions for the error, but it lacks the specific instruction given in the REFERENCE ANSWER. The coherence is moderate as the answer is understandable but not well-aligned with the specific question context."
+  },
+  "latency_ms": 3598.7744331359863,
+  "metadata": {
+    "source": "IT help.docx",
+    "category": "IT Help"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "test_case_id": "it-004",
+  "question": "我有兩張 shipment no，可是卻無法合併成一張 packing，為什麼？",
+  "generated_answer": "根據您提供的文件內容，這份文件主要介紹的是 **查詢（Query）** 和 **篩選（Filter）** 的操作方法，例如：\n- 使用「like」關鍵字進行條件查詢（如 `like 1100001867% and like %BCM4708COKFEBG%`）。\n- 使用「Search」功能（按 `Ctrl + F`）。\n- 使用「Simple filter」功能（點擊欄位右鍵選擇）。\n\n**文件中完全沒有提及任何關於「shipment no」、「packing」或「合併」的內容。**\n\n因此，根據您提供的文件，**無法為您解答為什麼無法合併 shipment no 成一張 packing**。這可能與您使用的系統功能、操作流程或權限有關，但這些內容並未包含在您提供的文件中。建議您查詢系統的「Shipping」或「Packing」相關",
+  "expected_answer": "請檢查以下欄位值必須相同：oecust_br、oecust_dropship、currency、forwarder、importer、shipvia、shipping_term、shippoint_from、shippoint_to、shippoint_from_city、shippoint_to_city、ship_to、bill_to、sold_to、ship_priority、stat_edi、hold_user、territory",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 1.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer does not address the question about why two shipment numbers cannot be merged into one packing. It instead discusses query and filter operations, which are irrelevant to the question. The answer is coherent in its structure but completely incorrect and incomplete in terms of content relevance and accuracy."
+  },
+  "latency_ms": 3666.520118713379,
+  "metadata": {
+    "source": "IT help.docx",
+    "category": "IT Help"
+  }
+}

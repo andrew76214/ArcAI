@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-003",
+  "question": "查詢 PR Report 是在哪支程式？",
+  "generated_answer": "根據提供的資料，**PR Report** 並未直接列出。然而，從上下文推斷，您可能是指 **PR Entry**（PR 記錄）或與之相關的 **PR Report**（PR 報表）。\n\n在提供的清單中，有以下相關項目：\n\n- **PR Entry · Create PR** → 這表示「PR 記錄」或「創建 PR」的功能。\n- **PR Property Config** → 這表示「PR 屬性設定」，可能與 PR 報表相關。\n- **Maintain Require** → 可能與 PR 有關的維護功能。\n- **Vendor Contract Date Maintain** → 供應商合約日期維護，與 PR 有關。\n\n但**沒有明確標示「PR Report」**的項目。\n\n---\n\n### 結論：\n\n**根據提供的清單，並無「PR Report」的明確項目，",
+  "expected_answer": "DR075",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer is incorrect as it does not mention 'DR075', which is the correct answer. It is incomplete because it fails to provide the specific program where the PR Report is located. The relevance is low because it does not directly address the question, instead providing unrelated information about other programs. The coherence is somewhat understandable, but the structure is not directly answering the question, leading to a low overall score."
+  },
+  "latency_ms": 2995.577573776245,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

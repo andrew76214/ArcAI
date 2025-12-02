@@ -1,0 +1,19 @@
+{
+  "test_case_id": "it-005",
+  "question": "DT092 unclose 選好 facility 卻找不到想看的單據，可能是什麼原因？",
+  "generated_answer": "根據提供的文件內容，DT092 選好 facility 卻找不到想看的單據，最可能的原因是 **該單據的 facility 欄位值與所選 facility 不匹配**。\n\n文件第一頁的「Search & filter 二者差異如下」部分明確說明：\n- **Search**：是針對 query 出來的**所有欄位**資料做 search（即全表搜尋）。\n- **Filter**：是針對**單一欄位**做 search（即篩選特定欄位的值）。\n\n在第二頁的「Query 方式介紹」中，也提到「用金手指查資料」時，需要「輸入在同一行，表示二者條件都要成立」，例如 `like 1100001867% and like %BCM4708COKFEBG%`，這表示搜尋條件是跨欄位的。\n\n",
+  "expected_answer": "請確認 facility 是否設定會產生 packing no，且 Doc. Status 需符合以下條件：status_document < 70，包含 0 (New open)、2 (Pending By User)、10 (Doc Ready)、11 (Waiting Feed Back)、12 (Waiting for B2B Feed Back)、15 (Ask for Process)、20 (Process Ready)",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer does not address the specific reasons mentioned in the reference answer, such as checking if the facility is set to generate a packing number and ensuring the document status is less than 70. Instead, it discusses search and filter functionalities, which are not relevant to the question. The coherence is slightly better as the answer is structured and understandable, but it fails to provide the correct and complete information needed to answer the question."
+  },
+  "latency_ms": 3271.0704803466797,
+  "metadata": {
+    "source": "IT help.docx",
+    "category": "IT Help"
+  }
+}

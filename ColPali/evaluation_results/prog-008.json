@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-008",
+  "question": "查詢供應商 EOL、COST/LT/MOQ/share rate maintain/last buy up/last receive up/buyer/sourcer 相關資料是在哪支程式？",
+  "generated_answer": "根據圖片一的內容，「供應商EOL,COST/LT/MOQ/share rate maintain/last buy up/last receive up/buyer/sourcer」相關資料的維護功能是在「Item Master Purchase Property Maintain」這個程式中進行的。這項功能位於圖片一的中段，與「Inventory StockRoom & Location」等其他維護功能並列。因此，相關資料維護的程式是「Item Master Purchase Property Maintain」。",
+  "expected_answer": "DT154",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER is incorrect as it provides a different program name ('Item Master Purchase Property Maintain') than the one specified in the REFERENCE ANSWER ('DT154'). It does not cover any key points from the reference answer, which is simply the program name. The relevance is low because the answer does not directly address the question with the correct program name, though it attempts to provide related information. The coherence is relatively high as the answer is well-structured and easy to follow, but it is ultimately incorrect and incomplete."
+  },
+  "latency_ms": 2129.1213035583496,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

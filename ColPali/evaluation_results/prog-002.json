@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-002",
+  "question": "開立 Purchase Order 是在哪支程式？",
+  "generated_answer": "根據提供的文件內容，開立 Purchase Order (PO) 的程式是 **PO change Buyer**。\n\n在文件的第三頁（圖片 2）中，有一項明確列出：\n- **PO change Buyer**：可針對單筆 po no 找出 buyer，或輸入 buyer 帶出名下所有 po no\n\n雖然文件中未直接標示「開立 PO」的程式名稱，但「PO change Buyer」這個功能是針對已存在的 PO 進行修改買方的，這與開立新 PO 的操作是不同的。然而，在文件的第二頁（圖片 1）中，有提到「PO BILL，月結對帳單」，這暗示了與 PO 有關的其他功能。但根據文件內容，最直接與「開立 PO」相關的程式名稱並未明確列出，而是「PO change Buyer」。\n\n此外，在文件的第二頁（圖片 1）中，",
+  "expected_answer": "DT007",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer incorrectly identifies 'PO change Buyer' as the program for opening a Purchase Order, while the reference answer specifies 'DT007'. The generated answer does not cover the key point from the reference answer and is mostly irrelevant to the question. The coherence is somewhat maintained, but the content is incorrect and incomplete, leading to a low overall score."
+  },
+  "latency_ms": 3683.3431720733643,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

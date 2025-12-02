@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-007",
+  "question": "如何取消 search？",
+  "generated_answer": "根据提供的文档内容，其中并未包含任何关于“如何取消 search”的说明或操作步骤。\n\n文档主要围绕以下几个主题：\n- DT011 和 DT136 的区别及操作（如删除 Apply No.）\n- DT166 的 release 操作（如处理未知描述）\n- DT185 的操作（如不做 picking）\n- FT039 的操作（如维护客户信息、配置值）\n- DT166 和 DT175 的 facility 选择逻辑\n- 如何将两票 shipment 合并为一张 invoice\n\n所有截图和文字描述均未提及任何与“取消搜索”（取消 search）相关的功能或操作方法。\n\n因此，基于现有文档，无法提供“如何取消 search”的答案。",
+  "expected_answer": "直接按 X 關閉，或是把欄位內容清成空白",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER does not provide the correct method to cancel a search as described in the REFERENCE ANSWER. It states that the document does not contain relevant information, which is incorrect according to the reference. The answer is mostly irrelevant to the question as it does not address the method of canceling a search. However, the answer is coherent and well-structured, making it easy to follow."
+  },
+  "latency_ms": 3103.163480758667,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

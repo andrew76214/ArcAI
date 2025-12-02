@@ -1,0 +1,19 @@
+{
+  "test_case_id": "it-002",
+  "question": "Qty Avail、Qty Allocate、Qty Onhand 這些欄位分別代表什麼意思？",
+  "generated_answer": "根據提供的文件內容，雖然沒有明確的定義表格，但可以從上下文推斷出這些欄位的含義：\n\n*   **Qty Avail (可用數量)**：這通常代表在庫的、可供銷售或使用的數量。它可能包含在庫數量，但不包括已分配或已預訂的數量。\n*   **Qty Allocate (已分配數量)**：這代表已經被分配給特定客戶、項目或內部部門的數量。它通常是從總庫存中減去的。\n*   **Qty Onhand (現有數量)**：這代表目前實際存放在倉庫中的數量。它是最基本的庫存數量，通常由系統自動計算，是其他欄位的基礎。\n\n這些欄位在庫存管理中非常關鍵，用於追蹤和管理庫存的流動。在文件的第2頁，提到了「Inventory Transaction",
+  "expected_answer": "Qty Avail (即剩餘的庫存數) = Qty Onhand – Qty Allocate；Qty Allocate 是目前 Allocate 的數量；Qty Onhand 是原本的庫存數",
+  "generation_metrics": {
+    "correctness": 3.0,
+    "completeness": 3.0,
+    "relevance": 4.0,
+    "coherence": 4.0,
+    "overall_score": 3.0,
+    "reasoning": "The GENERATED ANSWER provides a general understanding of the terms but lacks the specific formula and relationships mentioned in the REFERENCE ANSWER. It correctly identifies the general meaning of each term but does not explicitly state that Qty Avail is calculated as Qty Onhand minus Qty Allocate. The answer is mostly relevant and coherent, but it misses key details about the relationships between the quantities, affecting correctness and completeness."
+  },
+  "latency_ms": 3642.368793487549,
+  "metadata": {
+    "source": "IT help.docx",
+    "category": "IT Help"
+  }
+}

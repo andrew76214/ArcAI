@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-006",
+  "question": "請領/入庫單扣帳是在哪支程式執行？",
+  "generated_answer": "根據提供的三張圖片內容，並未直接提及「請領/入庫單扣帳」這個具體操作的執行程式。\n\n然而，我們可以從上下文推斷：\n- 第一張圖片列出了「Inventory Transaction - Picking」，這代表了從倉庫取出貨品的流程，通常與「請領」相關。\n- 第二張圖片討論了「DT022」的「Order Ack」與「Ship」，這與訂單確認和發貨有關，而「入庫單」通常是在發貨後才會產生。\n- 第三張圖片則是關於「Clear Filter」的說明，與扣帳無關。\n\n雖然「請領/入庫單扣帳」在這些圖片中沒有明確標示，但根據常見的ERP系統邏輯，「請領/入庫單扣帳」通常是在「Inventory Transaction」或「Stock Taking」等模組",
+  "expected_answer": "DT012",
+  "generation_metrics": {
+    "correctness": 2.0,
+    "completeness": 2.0,
+    "relevance": 3.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The generated answer does not correctly identify the program 'DT012' as the one where '請領/入庫單扣帳' is executed, which is the key fact in the reference answer. It instead provides an analysis based on images that are not part of the reference answer, leading to incorrect conclusions. The answer is somewhat relevant as it attempts to address the question, but it fails to provide the correct and complete information. The coherence is relatively high as the answer is well-structured and easy to follow, but the lack of correct and complete information significantly impacts the overall score."
+  },
+  "latency_ms": 3611.8922233581543,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

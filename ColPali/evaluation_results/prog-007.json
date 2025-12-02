@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-007",
+  "question": "有程式可以 MRP 轉 PR 直接產生 PR 嗎？是哪支？",
+  "generated_answer": "根據提供的文件內容，**沒有提及任何可以「MRP 轉 PR 直接產生 PR」的程式或功能**。\n\n文件第一頁列出的內容是各種系統操作與維護功能的清單，例如：\n- Item Master (Footprint) - 原料進貨數量計算\n- P/O Contract - 訂單制式貿易條款\n- QVL Maintain - 固資自用折合\n- PR Entry - Create PR\n- Group Pick List\n- Item Master Transaction (W/H Special Entry)\n\n雖然清單中包含「PR Entry」這個項目，但這僅表示「可以建立 PR」，並未提及任何「自動化」或「由 MRP 觸發」的流程。文件中也沒有任何關於「MRP 轉 PR」自動化功能的說明。\n\n此外，第二頁的內容是關於「Search & filter」的差異說明，與",
+  "expected_answer": "DT016",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer is incorrect as it states there is no program for MRP to PR conversion, while the reference answer clearly indicates 'DT016' as the program. The generated answer does not cover any key points from the reference answer, which is simply the program name. It is somewhat relevant as it discusses the topic of MRP to PR conversion, but it ultimately fails to provide the correct information. The coherence is moderate as the answer is structured and understandable, but it does not address the question correctly."
+  },
+  "latency_ms": 3285.4530811309814,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

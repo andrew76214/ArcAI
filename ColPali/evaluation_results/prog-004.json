@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-004",
+  "question": "查詢 PO status、PO up 相關資訊是在哪支程式？",
+  "generated_answer": "根據提供的資料，在第一張圖片的「功能說明」部分，有提到「PO Status Inquiry · po status · price · Maintain Need Date, ETD,ETA 功能」，這表示 PO status 的查詢功能是透過「PO Status Inquiry」這個功能來進行的。\n\n然而，這張圖片並未明確指出這個功能是在哪支程式中實現的。但根據上下文和常見的企業系統架構，這類功能通常會在「CBN ACCMIS V3」或類似的供應鏈管理系統中實現。此外，在第二張圖片中，我們可以看到「CBN ACCMIS V3 System」的螢幕截圖，這暗示了該系統是處理 PO 相關資訊的主系統。\n\n綜合來看，雖然資料中沒有明確標示「PO Status Inquiry」功能是在哪支程式中，但根據螢幕截圖和功能描述，最有可能的程式是「",
+  "expected_answer": "DR007",
+  "generation_metrics": {
+    "correctness": 2.0,
+    "completeness": 2.0,
+    "relevance": 3.0,
+    "coherence": 3.0,
+    "overall_score": 2.0,
+    "reasoning": "The generated answer does not correctly identify the specific program 'DR007' as the reference answer does. It speculates on possible systems without providing a definitive answer, which affects correctness and completeness. The relevance is somewhat maintained as it discusses related systems and functions, but it does not directly answer the question. The coherence is moderate, as the answer is understandable but lacks a clear conclusion. Overall, the generated answer fails to provide the precise information required by the question."
+  },
+  "latency_ms": 3675.4345893859863,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

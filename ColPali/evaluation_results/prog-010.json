@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-010",
+  "question": "SO Price book maintain 是在哪支程式？",
+  "generated_answer": "根據圖片二的內容，「SO Price book maintain」這個項目在「Price Book (PO)」的下方，屬於「Global PO Price Book maintain」的相關功能。因此，它是在「Global PO Price Book maintain」這個程式中進行維護的。",
+  "expected_answer": "DT139",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The GENERATED ANSWER is incorrect as it does not mention 'DT139', which is the correct program for 'SO Price book maintain'. It provides an incorrect program name and context, making it mostly irrelevant to the question. The answer is somewhat coherent, but it fails to address the correct information, leading to low scores in correctness, completeness, and relevance."
+  },
+  "latency_ms": 1461.6529941558838,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

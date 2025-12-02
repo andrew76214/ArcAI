@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-003",
+  "question": "Fill Down Current Column 要怎麼用？",
+  "generated_answer": "在您提供的圖片中，並**沒有**顯示「Fill Down Current Column」這個功能或按鈕。這表示：\n\n---\n\n### ❗️「Fill Down Current Column」並非您圖片中顯示的選項\n\n您圖片中顯示的是：\n\n- 「Filter Editor」（過濾條件）\n- 「Sort Ascending / Descending」\n- 「Group By This Column」\n- 「Show Group Panel」\n- 「Filter Editor...」（被紅框標示）\n- 以及「Part No」欄位的過濾條件設定（如 `Part No is like %A`）\n\n---\n\n## ✅ 「Fill Down Current Column」是什麼？\n\n「Fill Down Current Column」（或稱「下拉填充」、「向下填充當前欄位」）是 Excel 或某些資料表軟體（如 SAP、Oracle、某些 ERP 系統）中常用的功能，用於：\n\n> **將當前欄位中",
+  "expected_answer": "首先把要改的資料改好，按住 Shift 把要改的資料全選起來，滑鼠點在最後一筆，按右鍵選擇 Fill Down Current Column",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 1.0,
+    "coherence": 2.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer does not address the question of how to use 'Fill Down Current Column' at all. Instead, it discusses the absence of this feature in a provided image and lists unrelated features. It fails to provide any steps or instructions related to the question, making it completely incorrect and irrelevant. The coherence is slightly better as the text is structured, but it is not relevant to the question."
+  },
+  "latency_ms": 3001.1637210845947,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-005",
+  "question": "開立請領/入庫單要去哪支程式？",
+  "generated_answer": "根據提供的文件內容，開立請領/入庫單的程式是 **Inventory Transaction - Picking**。\n\n在第一張圖片中，有一行文字明確提到：\n**Inventory Transaction - Picking**，並附註說明「當做了DT141 pick時，allocatet資料就會被搬走」。\n\n這表示「Inventory Transaction - Picking」是處理請領/入庫單的程式。此外，第二張圖片中也顯示了「Inventory Transaction - Picking」的選項，進一步佐證了其功能。\n\n因此，開立請領/入庫單應使用 **Inventory Transaction - Picking** 程式。",
+  "expected_answer": "DT011",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 4.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer is incorrect as it identifies the wrong program ('Inventory Transaction - Picking') instead of the correct one ('DT011') for opening a requisition/receipt order. It does not cover any key points from the reference answer, which is simply the correct program code. While the answer is somewhat relevant to the question, it ultimately provides incorrect information. The coherence is relatively high as the answer is well-structured and easy to follow, but this does not compensate for the incorrectness and lack of completeness."
+  },
+  "latency_ms": 2793.612003326416,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

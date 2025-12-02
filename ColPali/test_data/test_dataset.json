@@ -1,0 +1,163 @@
+{
+  "version": "1.0",
+  "dataset_name": "ERP System QA Dataset",
+  "description": "Questions about IT help, V5 operations, and program functions",
+  "test_cases": [
+    {
+      "id": "it-001",
+      "question": "如果訂單 cust po no 有錯誤，可以自己修改嗎？用哪支程式可以修改？",
+      "expected_answer": "可以透過 DT201 做異動",
+      "metadata": {"source": "IT help.docx", "category": "IT Help"}
+    },
+    {
+      "id": "it-002",
+      "question": "Qty Avail、Qty Allocate、Qty Onhand 這些欄位分別代表什麼意思？",
+      "expected_answer": "Qty Avail (即剩餘的庫存數) = Qty Onhand – Qty Allocate；Qty Allocate 是目前 Allocate 的數量；Qty Onhand 是原本的庫存數",
+      "metadata": {"source": "IT help.docx", "category": "IT Help"}
+    },
+    {
+      "id": "it-003",
+      "question": "SO 無法存檔，出現 Schedule Forwarder To address is not defined 錯誤訊息，該怎麼處理？",
+      "expected_answer": "進 FS019 找 SO 上的客戶資料，Ship to Add -> Forwarder 一定要有值，若沒有值請填入 None",
+      "metadata": {"source": "IT help.docx", "category": "IT Help"}
+    },
+    {
+      "id": "it-004",
+      "question": "我有兩張 shipment no，可是卻無法合併成一張 packing，為什麼？",
+      "expected_answer": "請檢查以下欄位值必須相同：oecust_br、oecust_dropship、currency、forwarder、importer、shipvia、shipping_term、shippoint_from、shippoint_to、shippoint_from_city、shippoint_to_city、ship_to、bill_to、sold_to、ship_priority、stat_edi、hold_user、territory",
+      "metadata": {"source": "IT help.docx", "category": "IT Help"}
+    },
+    {
+      "id": "it-005",
+      "question": "DT092 unclose 選好 facility 卻找不到想看的單據，可能是什麼原因？",
+      "expected_answer": "請確認 facility 是否設定會產生 packing no，且 Doc. Status 需符合以下條件：status_document < 70，包含 0 (New open)、2 (Pending By User)、10 (Doc Ready)、11 (Waiting Feed Back)、12 (Waiting for B2B Feed Back)、15 (Ask for Process)、20 (Process Ready)",
+      "metadata": {"source": "IT help.docx", "category": "IT Help"}
+    },
+    {
+      "id": "it-006",
+      "question": "DT092 不小心把 carton data 刪掉，要怎麼還原？",
+      "expected_answer": "步驟：(1) 先切到 packing 頁籤，把 packing_no query 出來 (2) 把 packing detail 的 data 按右鍵 delete，切到 shipment list 頁籤 (3) 將 shipment no 或 packing no query 出來 (4) 按右鍵 Add shipment to current packing，再切到 carton list 頁籤就會產生新的",
+      "metadata": {"source": "IT help.docx", "category": "IT Help"}
+    },
+    {
+      "id": "v5-001",
+      "question": "V5 地球上的 toolbar 圖示可以改小嗎？",
+      "expected_answer": "在 User Info 不勾選「小圖示」，改完存檔後要關閉 V5 重開才會生效",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "v5-002",
+      "question": "V5 地球登入的 format 可以調整嗎？",
+      "expected_answer": "可以在 System style (系統樣式) 自己選擇要的 format",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "v5-003",
+      "question": "Fill Down Current Column 要怎麼用？",
+      "expected_answer": "首先把要改的資料改好，按住 Shift 把要改的資料全選起來，滑鼠點在最後一筆，按右鍵選擇 Fill Down Current Column",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "v5-004",
+      "question": "Import file 的用途是什麼？Append Data 和 Update Destination 有什麼差別？",
+      "expected_answer": "Append Data 是 insert 的概念，以地球畫面為主新增進來。Update Destination 是 update 的概念，以要 Import 的檔案為主。若 part no 勾選 key Match，表示以 part no 為主，檔案裡 part no 只能唯一不能重複，若重複則以地球上的排序順序更新（找第一筆去更新）",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "v5-005",
+      "question": "Search 和 Filter 有什麼差異？",
+      "expected_answer": "Search 是針對 query 出來的所有欄位資料做搜尋；Filter 過濾條件是針對單一欄位做搜尋",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "v5-006",
+      "question": "Search 的快速鍵是什麼？除了快速鍵還有什麼方式？",
+      "expected_answer": "快速鍵是 Ctrl + F，會多一個 search 欄位。另外也可以按右鍵 -> Data Process -> Search",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "v5-007",
+      "question": "如何取消 search？",
+      "expected_answer": "直接按 X 關閉，或是把欄位內容清成空白",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "v5-008",
+      "question": "Simple filter 在哪邊？",
+      "expected_answer": "點選欄位，按右鍵 Data Process -> Simple filter",
+      "metadata": {"source": "V5 操作指南.docx", "category": "V5 Operations"}
+    },
+    {
+      "id": "prog-001",
+      "question": "開立 PR 是在哪支程式？",
+      "expected_answer": "DT073",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-002",
+      "question": "開立 Purchase Order 是在哪支程式？",
+      "expected_answer": "DT007",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-003",
+      "question": "查詢 PR Report 是在哪支程式？",
+      "expected_answer": "DR075",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-004",
+      "question": "查詢 PO status、PO up 相關資訊是在哪支程式？",
+      "expected_answer": "DR007",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-005",
+      "question": "開立請領/入庫單要去哪支程式？",
+      "expected_answer": "DT011",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-006",
+      "question": "請領/入庫單扣帳是在哪支程式執行？",
+      "expected_answer": "DT012",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-007",
+      "question": "有程式可以 MRP 轉 PR 直接產生 PR 嗎？是哪支？",
+      "expected_answer": "DT016",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-008",
+      "question": "查詢供應商 EOL、COST/LT/MOQ/share rate maintain/last buy up/last receive up/buyer/sourcer 相關資料是在哪支程式？",
+      "expected_answer": "DT154",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-009",
+      "question": "Price Book (PO) maintain 是在哪支程式？",
+      "expected_answer": "DT157",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-010",
+      "question": "SO Price book maintain 是在哪支程式？",
+      "expected_answer": "DT139",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-011",
+      "question": "哪支程式可以查詢 part no 在各個庫的庫存？",
+      "expected_answer": "DR004",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    },
+    {
+      "id": "prog-012",
+      "question": "哪支程式可以查詢料號在所有倉的交易記錄或單據異動？",
+      "expected_answer": "DR005",
+      "metadata": {"source": "地球程式功能說明.docx", "category": "Program Functions"}
+    }
+  ]
+}

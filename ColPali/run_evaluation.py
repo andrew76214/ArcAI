@@ -43,6 +43,11 @@ def main():
         action="store_true",
         help="Don't save intermediate results",
     )
+    parser.add_argument(
+        "--overwrite",
+        action="store_true",
+        help="Overwrite existing index",
+    )
 
     args = parser.parse_args()
 
@@ -68,10 +73,10 @@ def main():
     rag_service = RAGService(app_config)
 
     # Check if documents need indexing
-    if not rag_service.is_indexed:
+    if not rag_service.is_indexed or args.overwrite:
         print(f"Indexing documents from {app_config.storage.data_dir}...")
         try:
-            msg = rag_service.index_documents()
+            msg = rag_service.index_documents(overwrite=args.overwrite)
             print(msg)
         except Exception as e:
             print(f"Error indexing documents: {e}")

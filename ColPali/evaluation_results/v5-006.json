@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-006",
+  "question": "Search 的快速鍵是什麼？除了快速鍵還有什麼方式？",
+  "generated_answer": "根據圖片 1 中的截圖，顯示了在「Shipping Process」模組的「Packing」選單中，有「Search」功能。其快捷鍵為 **Ctrl + F**。\n\n此外，根據圖片 1 中的文字說明，除了使用快捷鍵，還有以下方式可以進行搜尋：\n1.  在「Packing」選單中，點擊「Search」按鈕。\n2.  在「Packing」選單中，點擊「View Packing」按鈕，然後在彈出的視窗中使用「Search」功能。\n\n因此，搜尋的快速鍵是 **Ctrl + F**，除此之外，也可以透過點擊選單中的「Search」按鈕或「View Packing」後的搜尋功能來進行。",
+  "expected_answer": "快速鍵是 Ctrl + F，會多一個 search 欄位。另外也可以按右鍵 -> Data Process -> Search",
+  "generation_metrics": {
+    "correctness": 3.0,
+    "completeness": 3.0,
+    "relevance": 4.0,
+    "coherence": 4.0,
+    "overall_score": 3.0,
+    "reasoning": "The generated answer correctly identifies the shortcut key as Ctrl + F, which matches the reference. However, it introduces additional methods for searching that are not mentioned in the reference answer, such as clicking the 'Search' button or using 'View Packing'. This results in partial correctness and completeness. The relevance is mostly maintained as it addresses the question, but the extra details slightly deviate from the reference. The coherence is generally good, with a clear structure and logical flow."
+  },
+  "latency_ms": 3246.4094161987305,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

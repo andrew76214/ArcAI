@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-011",
+  "question": "哪支程式可以查詢 part no 在各個庫的庫存？",
+  "generated_answer": "要查詢「Part No」在各個庫存（庫存庫）的現有數量，通常需要使用 **企業資源規劃（ERP）系統** 或 **庫存管理系統（Inventory Management System）**，這些系統會整合各個倉庫的數據，並提供查詢功能。\n\n以下是常見的程式或系統，可用來查詢 Part No 在各庫存的庫存：\n\n---\n\n## ✅ 1. **ERP 系統（最常見）**\n\n### 常見 ERP 系統：\n- **SAP ERP**  \n  → 使用「Inventory Management」模組，可查詢「Material Master」與「Stock Overview」，支援多倉庫查詢。\n  → 用語：`Material Number` 或 `Part No`，查詢 `Stock Location` 或 `Warehouse`。\n\n- **Oracle NetSuite / Oracle ERP Cloud**  \n  → 提供「Inventory」→「Items」→「Stock",
+  "expected_answer": "DR004",
+  "generation_metrics": {
+    "correctness": 2.0,
+    "completeness": 2.0,
+    "relevance": 3.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER does not mention the specific program 'DR004' as stated in the REFERENCE ANSWER, which is crucial for correctness and completeness. It instead provides a general explanation about ERP and inventory management systems, which is somewhat relevant but not directly answering the question. The coherence is relatively high as the answer is well-structured and easy to follow, but it lacks the specific information required by the question."
+  },
+  "latency_ms": 2741.718053817749,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

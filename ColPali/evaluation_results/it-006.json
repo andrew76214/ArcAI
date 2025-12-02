@@ -1,0 +1,19 @@
+{
+  "test_case_id": "it-006",
+  "question": "DT092 不小心把 carton data 刪掉，要怎麼還原？",
+  "generated_answer": "根據您提供的文件內容，**無法還原被刪除的 carton data**。\n\n原因如下：\n1.  **文件內容不包含相關資訊**：您提供的三張圖片（第0、1、2頁）僅說明了如何在「Item Master」中使用「Search」和「Filter」功能，並沒有提及任何關於「carton data」的儲存、恢復或備份機制。\n2.  **無備份或恢復步驟**：文件中沒有任何關於「DT092」這個編號的資訊，也沒有說明如何恢復被刪除的資料。通常，若系統有備份功能，會在操作前提示或在系統設定中提供恢復選項，但這些資訊在文件中均未出現。\n3.  **功能範圍不適用**：文件中的「Search」和「Filter」功能是用於篩選和查詢現有資料，",
+  "expected_answer": "步驟：(1) 先切到 packing 頁籤，把 packing_no query 出來 (2) 把 packing detail 的 data 按右鍵 delete，切到 shipment list 頁籤 (3) 將 shipment no 或 packing no query 出來 (4) 按右鍵 Add shipment to current packing，再切到 carton list 頁籤就會產生新的",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The generated answer is incorrect as it states that the carton data cannot be restored, which contradicts the reference answer that provides a step-by-step restoration process. It lacks completeness as it does not cover any of the key steps mentioned in the reference. The relevance is low because it does not address the specific question about restoring carton data, instead focusing on unrelated document content. The coherence is relatively high as the answer is well-structured and easy to follow, despite being incorrect."
+  },
+  "latency_ms": 3675.128698348999,
+  "metadata": {
+    "source": "IT help.docx",
+    "category": "IT Help"
+  }
+}

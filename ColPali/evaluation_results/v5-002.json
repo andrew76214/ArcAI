@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-002",
+  "question": "V5 地球登入的 format 可以調整嗎？",
+  "generated_answer": "根據提供的文件內容，並未提及任何關於「V5 地球登入的 format 可以調整嗎？」的資訊。\n\n文件中主要討論的是以下幾個主題：\n- DT022：關於 Order Ack、Confirm Ship、以及 Ship 欄位的設定問題。\n- DT009：關於 shipment 可合併條件及存檔時出現的錯誤訊息。\n- 以及一些系統操作步驟，例如在 Item Master 中使用 Search 功能。\n\n這些內容均與「V5 地球登入的 format」無關，文件中也沒有提供任何關於此項設定或調整的說明。\n\n因此，根據目前提供的資料，無法回答這個問題。",
+  "expected_answer": "可以在 System style (系統樣式) 自己選擇要的 format",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER is incorrect as it states that the document does not provide information on adjusting the format for 'V5 地球登入', while the REFERENCE ANSWER clearly states that it can be adjusted in 'System style'. The GENERATED ANSWER is missing all key points from the REFERENCE ANSWER, leading to low completeness. It is somewhat relevant as it attempts to address the question but ultimately fails to provide the correct information. The coherence is moderate as the answer is structured and understandable, but it does not provide the necessary information."
+  },
+  "latency_ms": 2937.828302383423,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

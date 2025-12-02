@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-001",
+  "question": "開立 PR 是在哪支程式？",
+  "generated_answer": "根據提供的清單，**開立 PR（Purchase Requisition）** 的功能在 **「PR Entry · Create PR」** 這一行中明確列出。\n\n這行的英文是：  \n**PR Entry · Create PR**\n\n---\n\n✅ **答案：PR Entry · Create PR**\n\n這表示在該系統中，開立採購申請（Purchase Requisition）的功能是透過 **PR Entry** 模組來執行，並稱為 **Create PR**。\n\n---\n\n📌 **補充說明**：  \n在許多ERP系統（如SAP、Oracle、或自訂系統）中，「PR Entry」通常指「採購申請單」的建立功能，是採購流程的起點。此清單中也包含其他相關功能，如「RMA Order Entry」、「RTV purchase order」等，但「PR Entry」是專門用於開立 PR 的。\n\n---\n\n✅ 所以，**開立 PR 是",
+  "expected_answer": "DT073",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER is incorrect as it does not mention 'DT073', which is the correct answer according to the REFERENCE ANSWER. It instead provides information about 'PR Entry · Create PR', which is not relevant to the question. The answer is mostly irrelevant to the question asked, as it does not address the specific program 'DT073'. However, the answer is coherent and well-structured, making it easy to follow, but it fails to provide the correct and complete information required by the question."
+  },
+  "latency_ms": 2996.443033218384,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}

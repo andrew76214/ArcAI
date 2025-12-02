@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-005",
+  "question": "Search 和 Filter 有什麼差異？",
+  "generated_answer": "根據提供的文件內容，**Search（搜尋）** 和 **Filter（篩選）** 是兩個不同的功能，主要差異在於它們的運作方式和用途：\n\n1.  **Search (搜尋)**：\n    *   **運作方式**：通常是在一個欄位或整個資料表中，根據特定的關鍵字或條件進行全表搜尋。它會返回所有符合條件的記錄。\n    *   **用途**：用於快速定位特定的資料。例如，在「Inventory Trans」的「Apply No」欄位中，輸入「A1000022」，系統會搜尋所有與此編號相關的記錄。\n    *   **文件中例證**：在「Inventory Trans」的介面中，有「Retrieve」按鈕，其功能是根據輸入的「Apply No」來搜尋對應的資料。同時，文件中",
+  "expected_answer": "Search 是針對 query 出來的所有欄位資料做搜尋；Filter 過濾條件是針對單一欄位做搜尋",
+  "generation_metrics": {
+    "correctness": 3.0,
+    "completeness": 3.0,
+    "relevance": 4.0,
+    "coherence": 4.0,
+    "overall_score": 3.0,
+    "reasoning": "The GENERATED ANSWER provides a detailed explanation of 'Search' but does not adequately address 'Filter' as described in the REFERENCE ANSWER. It partially captures the concept of 'Search' but introduces additional details not present in the reference. The explanation of 'Filter' is missing, which affects completeness and correctness. The answer is mostly relevant to the question and is coherent, but it lacks the necessary comparison to fully address the question."
+  },
+  "latency_ms": 3656.6803455352783,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

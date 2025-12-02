@@ -1,0 +1,19 @@
+{
+  "test_case_id": "it-001",
+  "question": "如果訂單 cust po no 有錯誤，可以自己修改嗎？用哪支程式可以修改？",
+  "generated_answer": "根據提供的文件內容，**不可以自己修改訂單的 cust po no**。\n\n文件中提到：\n- 在「PO Status Inquiry」功能中，可以查詢 PO 狀態、價格、維護需求日期、ETD/ETA，但並未提及可以修改 PO 號碼。\n- 在「Data Process > Search」功能中，可以查詢資料，但沒有提供修改功能。\n- 在「RMA History」功能中，可以查詢 RMA 的歷史記錄，但沒有提供修改功能。\n\n此外，文件中提到的「RMA Receive Report」、「RMA invoice」、「Receive Trace Report」等報告，都是用來查詢資料的，並沒有提供修改功能。\n\n因此，根據文件內容，**訂單的 cust po no 是不能自己修改的**，需要由系統管理員或相關授權人員進行修改，但文件中並未提及具體的程式或功能可以修改此欄位。",
+  "expected_answer": "可以透過 DT201 做異動",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 3.0,
+    "coherence": 4.0,
+    "overall_score": 2.0,
+    "reasoning": "The GENERATED ANSWER is incorrect as it states that the cust po no cannot be modified by the user, while the REFERENCE ANSWER indicates it can be modified using DT201. The GENERATED ANSWER does not cover the key point of the specific program (DT201) that allows modification, leading to low scores in correctness and completeness. The relevance is somewhat maintained as it discusses the modification of cust po no, but it diverges by focusing on the inability to modify. The coherence is relatively high as the answer is well-structured and easy to follow."
+  },
+  "latency_ms": 8901.432275772095,
+  "metadata": {
+    "source": "IT help.docx",
+    "category": "IT Help"
+  }
+}

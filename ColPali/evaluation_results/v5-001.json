@@ -1,0 +1,19 @@
+{
+  "test_case_id": "v5-001",
+  "question": "V5 地球上的 toolbar 圖示可以改小嗎？",
+  "generated_answer": "根據提供的三張圖片，這些都是電腦螢幕截圖，顯示的是企業資源規劃（ERP）系統的介面，例如 CBN ACCMIS 和 Arcadyan ARCIMS。這些截圖中並未顯示任何關於「V5 地球」或其 toolbar 圖示可否縮小的資訊。此外，這些截圖中的介面元素（如按鈕、選單、表格）是固定尺寸的，並無提供調整大小的選項。因此，無法從提供的資料中確認「V5 地球上的 toolbar 圖示可以改小嗎？」這個問題的正確答案。",
+  "expected_answer": "在 User Info 不勾選「小圖示」，改完存檔後要關閉 V5 重開才會生效",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 2.0,
+    "reasoning": "The generated answer does not address the question about changing the toolbar icon size in V5. It incorrectly focuses on unrelated screenshots and does not mention the necessary steps to change the icon size as described in the reference answer. The relevance is low because it does not directly address the question, and the coherence is slightly better as the response is understandable but not relevant."
+  },
+  "latency_ms": 2735.7823848724365,
+  "metadata": {
+    "source": "V5 操作指南.docx",
+    "category": "V5 Operations"
+  }
+}

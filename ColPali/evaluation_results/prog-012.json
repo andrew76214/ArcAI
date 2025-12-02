@@ -1,0 +1,19 @@
+{
+  "test_case_id": "prog-012",
+  "question": "哪支程式可以查詢料號在所有倉的交易記錄或單據異動？",
+  "generated_answer": "根據提供的文件內容，**沒有明確提到任何程式或功能可以直接查詢料號在所有倉庫的交易記錄或單據異動**。\n\n文件內容主要涵蓋的是：\n\n- DT022（Order Ack）的資料要求與注意事項\n- confirm ship 的操作與相關設定（如 DT201 修改客戶資料）\n- 在 keyin so sent B2B 時 Ship 欄位的設定與 shipment no 的問題\n- Qty Avail、Qty Allocate、Qty Onhand 的欄位說明\n- Schedule Forwarder To address 未定義時的錯誤處理\n- price hold 不走 e-approve 的設定（需改 AUTOAPPR）\n- 什麼條件下會出現 Allocate Virtual（如 AT009、CT003、part no 屬性等）\n- Schedule Forwarder To address not defined 的錯誤\n\n**重點是：文件中沒有提及任何「查詢料號在",
+  "expected_answer": "DR005",
+  "generation_metrics": {
+    "correctness": 1.0,
+    "completeness": 1.0,
+    "relevance": 2.0,
+    "coherence": 3.0,
+    "overall_score": 1.0,
+    "reasoning": "The generated answer is incorrect as it states that there is no program mentioned for querying transaction records, while the reference answer clearly states 'DR005' as the program. The generated answer does not cover any key points from the reference answer, making it incomplete. It is somewhat relevant as it attempts to address the question but ultimately fails to provide the correct information. The coherence is moderate as the answer is structured but does not provide the necessary information. Overall, the generated answer fails to meet the requirements of the question."
+  },
+  "latency_ms": 2975.0828742980957,
+  "metadata": {
+    "source": "地球程式功能說明.docx",
+    "category": "Program Functions"
+  }
+}
