@@ -1,48 +1,58 @@
 # Evaluation Report: ERP System QA Dataset
 
-**Generated:** 2025-12-02T10:58:15.517018
+**Generated:** 2025-12-02T15:24:07.536924
 **Total Test Cases:** 26
 
 ## Aggregate Generation Metrics
 
 | Metric | Value |
 |--------|-------|
-| mean_correctness | 1.3846 |
-| mean_completeness | 1.3846 |
-| mean_relevance | 2.3846 |
-| mean_coherence | 3.4231 |
-| mean_overall_score | 1.7308 |
+| mean_correctness | 2.3462 |
+| mean_completeness | 2.3462 |
+| mean_relevance | 3.3846 |
+| mean_coherence | 4.0000 |
+| mean_overall_score | 2.6538 |
+
+## Aggregate Retrieval Metrics
+
+| Metric | Value |
+|--------|-------|
+| hit_rate | 0.5385 |
+| mean_recall | 0.4038 |
+| mean_precision | 0.5385 |
+| mean_mrr | 0.5385 |
+| retrieval_coverage | 1.0000 |
 
 ## Individual Results Summary
 
-| Test Case | Overall Score | Correctness | Completeness | Latency (ms) |
-|-----------|---------------|-------------|--------------|--------------|
-| it-001 | 2.0 | 1.0 | 1.0 | 8901.4 |
-| it-002 | 3.0 | 3.0 | 3.0 | 3642.4 |
-| it-003 | 2.0 | 2.0 | 2.0 | 3598.8 |
-| it-004 | 1.0 | 1.0 | 1.0 | 3666.5 |
-| it-005 | 1.0 | 1.0 | 1.0 | 3271.1 |
-| it-006 | 2.0 | 1.0 | 1.0 | 3675.1 |
-| v5-001 | 2.0 | 1.0 | 1.0 | 2735.8 |
-| v5-002 | 2.0 | 1.0 | 1.0 | 2937.8 |
-| v5-003 | 1.0 | 1.0 | 1.0 | 3001.2 |
-| v5-004 | 1.0 | 1.0 | 1.0 | 2747.3 |
-| v5-005 | 3.0 | 3.0 | 3.0 | 3656.7 |
-| v5-006 | 3.0 | 3.0 | 3.0 | 3246.4 |
-| v5-007 | 2.0 | 1.0 | 1.0 | 3103.2 |
-| v5-008 | 2.0 | 1.0 | 1.0 | 3240.1 |
-| prog-001 | 2.0 | 1.0 | 1.0 | 2996.4 |
-| prog-002 | 1.0 | 1.0 | 1.0 | 3683.3 |
-| prog-003 | 1.0 | 1.0 | 1.0 | 2995.6 |
-| prog-004 | 2.0 | 2.0 | 2.0 | 3675.4 |
-| prog-005 | 1.0 | 1.0 | 1.0 | 2793.6 |
-| prog-006 | 2.0 | 2.0 | 2.0 | 3611.9 |
-| prog-007 | 1.0 | 1.0 | 1.0 | 3285.5 |
-| prog-008 | 2.0 | 1.0 | 1.0 | 2129.1 |
-| prog-009 | 2.0 | 1.0 | 1.0 | 2110.7 |
-| prog-010 | 1.0 | 1.0 | 1.0 | 1461.7 |
-| prog-011 | 2.0 | 2.0 | 2.0 | 2741.7 |
-| prog-012 | 1.0 | 1.0 | 1.0 | 2975.1 |
+| Test Case | Overall Score | Correctness | Completeness | Hit | Recall | MRR | Latency (ms) |
+|-----------|---------------|-------------|--------------|-----|--------|-----|--------------|
+| it-001 | 5.0 | 5.0 | 5.0 | ✓ | 1.00 | 1.00 | 6038.8 |
+| it-002 | 5.0 | 5.0 | 5.0 | ✓ | 1.00 | 1.00 | 3058.1 |
+| it-003 | 3.0 | 3.0 | 3.0 | ✗ | 0.00 | 0.00 | 3960.3 |
+| it-004 | 1.0 | 1.0 | 1.0 | ✓ | 0.50 | 1.00 | 4356.3 |
+| it-005 | 1.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 4354.2 |
+| it-006 | 3.0 | 3.0 | 3.0 | ✓ | 0.50 | 1.00 | 4353.6 |
+| v5-001 | 5.0 | 5.0 | 5.0 | ✓ | 1.00 | 1.00 | 2964.7 |
+| v5-002 | 4.0 | 4.0 | 4.0 | ✗ | 0.00 | 0.00 | 3962.1 |
+| v5-003 | 4.0 | 4.0 | 4.0 | ✓ | 1.00 | 1.00 | 4351.9 |
+| v5-004 | 4.0 | 4.0 | 4.0 | ✓ | 1.00 | 1.00 | 4363.1 |
+| v5-005 | 5.0 | 5.0 | 5.0 | ✓ | 1.00 | 1.00 | 3768.7 |
+| v5-006 | 3.0 | 3.0 | 3.0 | ✓ | 0.50 | 1.00 | 3948.9 |
+| v5-007 | 2.0 | 2.0 | 2.0 | ✗ | 0.00 | 0.00 | 4193.1 |
+| v5-008 | 4.0 | 4.0 | 4.0 | ✓ | 1.00 | 1.00 | 4343.1 |
+| prog-001 | 2.0 | 1.0 | 1.0 | ✓ | 0.50 | 1.00 | 3423.3 |
+| prog-002 | 1.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 3969.9 |
+| prog-003 | 1.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 3669.3 |
+| prog-004 | 1.0 | 1.0 | 1.0 | ✓ | 0.50 | 1.00 | 4364.8 |
+| prog-005 | 2.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 3977.0 |
+| prog-006 | 2.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 4346.4 |
+| prog-007 | 2.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 2582.8 |
+| prog-008 | 1.0 | 1.0 | 1.0 | ✓ | 0.50 | 1.00 | 2990.2 |
+| prog-009 | 2.0 | 1.0 | 1.0 | ✓ | 0.50 | 1.00 | 3455.0 |
+| prog-010 | 2.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 3141.2 |
+| prog-011 | 2.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 4354.6 |
+| prog-012 | 2.0 | 1.0 | 1.0 | ✗ | 0.00 | 0.00 | 3972.5 |
 
 ## Detailed Results
 
@@ -52,18 +62,15 @@
 
 **Expected Answer:** 可以透過 DT201 做異動
 
-**Generated Answer:** 根據提供的文件內容，**不可以自己修改訂單的 cust po no**。
+**Generated Answer:** 根據圖片一中的第2點說明，如果訂單的 cust po no 有錯誤，**可以自己修改**。修改的程式是 **DT201**。修改後，資料會自動回寫到 shipment。
 
-文件中提到：
-- 在「PO Status Inquiry」功能中，可以查詢 PO 狀態、價格、維護需求日期、ETD/ETA，但並未提及可以修改 PO 號碼。
-- 在「Data Process > Search」功能中，可以查詢資料，但沒有提供修改功能。
-- 在「RMA History」功能中，可以查詢 RMA 的歷史記錄，但沒有提供修改功能。
+**Retrieval:** ✓ Hit | Recall: 1.00 | MRR: 1.00
 
-此外，文件中提到的「RMA Receive Report」、「RMA invoice」、「Receive Trace Report」等報告，都是用來查詢資料的，並沒有提供修改功能。
+**Retrieved Pages:** (1, 1)
 
-因此，根據文件內容，**訂單的 cust po no 是不能自己修改的**，需要由系統管理員或相關授權人員進行修改，但文件中並未提及具體的程式或功能可以修改此欄位。
+**Expected Pages:** (1, 1)
 
-**Reasoning:** The GENERATED ANSWER is incorrect as it states that the cust po no cannot be modified by the user, while the REFERENCE ANSWER indicates it can be modified using DT201. The GENERATED ANSWER does not cover the key point of the specific program (DT201) that allows modification, leading to low scores in correctness and completeness. The relevance is somewhat maintained as it discusses the modification of cust po no, but it diverges by focusing on the inability to modify. The coherence is relatively high as the answer is well-structured and easy to follow.
+**Reasoning:** The GENERATED ANSWER is completely accurate, covering all key points from the REFERENCE ANSWER. It correctly states that the cust po no can be modified using the DT201 program, which matches the reference. The answer is directly relevant to the question and is clear and well-structured, making it easy to follow. The additional detail about the data being automatically written back to shipment does not detract from the answer's relevance or correctness.
 
 ---
 
@@ -73,15 +80,21 @@
 
 **Expected Answer:** Qty Avail (即剩餘的庫存數) = Qty Onhand – Qty Allocate；Qty Allocate 是目前 Allocate 的數量；Qty Onhand 是原本的庫存數
 
-**Generated Answer:** 根據提供的文件內容，雖然沒有明確的定義表格，但可以從上下文推斷出這些欄位的含義：
+**Generated Answer:** 根據第一張圖片中的說明，這些欄位的含義如下：
 
-*   **Qty Avail (可用數量)**：這通常代表在庫的、可供銷售或使用的數量。它可能包含在庫數量，但不包括已分配或已預訂的數量。
-*   **Qty Allocate (已分配數量)**：這代表已經被分配給特定客戶、項目或內部部門的數量。它通常是從總庫存中減去的。
-*   **Qty Onhand (現有數量)**：這代表目前實際存放在倉庫中的數量。它是最基本的庫存數量，通常由系統自動計算，是其他欄位的基礎。
+*   **Qty Avail (即剩餘的庫存數)**：這個數字等於 **Qty Onhand (原本的庫存數)** 減去 **Qty Allocate (目前 Allocate 的數量)**。
+*   **Qty Allocate (目前 Allocate 的數量)**：這是目前已經分配給訂單或其它用途的庫存數量。
+*   **Qty Onhand (原本的庫存數)**：這是庫存系統中記錄的、尚未被分配或使用的原始庫存數量。
 
-這些欄位在庫存管理中非常關鍵，用於追蹤和管理庫存的流動。在文件的第2頁，提到了「Inventory Transaction
+簡單來說，剩餘庫存 = 原始庫存 - 已分配庫存。
 
-**Reasoning:** The GENERATED ANSWER provides a general understanding of the terms but lacks the specific formula and relationships mentioned in the REFERENCE ANSWER. It correctly identifies the general meaning of each term but does not explicitly state that Qty Avail is calculated as Qty Onhand minus Qty Allocate. The answer is mostly relevant and coherent, but it misses key details about the relationships between the quantities, affecting correctness and completeness.
+**Retrieval:** ✓ Hit | Recall: 1.00 | MRR: 1.00
+
+**Retrieved Pages:** (1, 1)
+
+**Expected Pages:** (1, 1)
+
+**Reasoning:** The GENERATED ANSWER accurately explains the meanings of Qty Avail, Qty Allocate, and Qty Onhand, matching the REFERENCE ANSWER. It covers all key points, is directly relevant to the question, and is clear and well-structured. Therefore, it scores a 5 in all evaluation criteria.
 
 ---
 
@@ -91,16 +104,21 @@
 
 **Expected Answer:** 進 FS019 找 SO 上的客戶資料，Ship to Add -> Forwarder 一定要有值，若沒有值請填入 None
 
-**Generated Answer:** 根據您提供的圖片和內容，此錯誤訊息「Schedule Forwarder To address is not defined」並未在任何圖片或文字中直接提及。然而，從上下文推斷，此錯誤通常發生在「PO Schedule approve」或「PO Schedule maintain」等與訂單排程相關的模組中，而這些模組在您提供的圖片中並未直接展示。
+**Generated Answer:** 根據提供的兩張圖片，處理「Schedule Forwarder To address is not defined」錯誤訊息的方法如下：
 
-在您提供的圖片中，有關於「PO Schedule approve」的說明（圖片 1），但沒有關於「Schedule Forwarder」的具體設定。因此，根據您提供的資訊，無法直接從圖片中找到解決此錯誤的方法。
+1.  **問題定位**：此錯誤訊息（如圖1所示）通常發生在嘗試存檔一個包含「Ship To」地址的訂單時，系統無法找到正確的「Forwarder」（運輸代理）資訊。這通常是由於在「Ship To」地址中未正確填入「Forwarder」欄位，或該欄位的值為「None」，導致系統無法建立運輸鏈。
 
-不過，根據一般ERP系統的邏輯，此錯誤通常意味著系統找不到預設的「Schedule Forwarder」地址。解決方法通常包括：
+2.  **解決方法**：
+    *   **步驟一：進入客戶資料**。在圖1的「Customer Maintain」介面中，找到並點選「Ship To Add」。
+    *   **步驟二：填寫 Forwarder**。在「Ship To Add」的表單中，將「Forwarder」欄位的值設為「
 
-1.  **檢查系統設定**：進入系統設定，確認「Schedule Forwarder」的地址是否已正確設定。
-2.  **檢查使用者權限
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
-**Reasoning:** The GENERATED ANSWER does not accurately address the specific solution provided in the REFERENCE ANSWER, which is to check the 'Ship to Add -> Forwarder' field in FS019 and ensure it has a value. Instead, it provides a general approach to checking system settings and user permissions, which is not mentioned in the REFERENCE ANSWER. The GENERATED ANSWER is somewhat relevant as it discusses potential causes and solutions for the error, but it lacks the specific instruction given in the REFERENCE ANSWER. The coherence is moderate as the answer is understandable but not well-aligned with the specific question context.
+**Retrieved Pages:** (1, 1)
+
+**Expected Pages:** (1, 2)
+
+**Reasoning:** The GENERATED ANSWER correctly identifies the issue with the 'Forwarder' field in the 'Ship To' address, which aligns with the REFERENCE ANSWER. However, it introduces unnecessary details about images and does not explicitly mention filling the 'Forwarder' field with 'None' if it is empty, which is a key point in the REFERENCE ANSWER. The answer is mostly relevant and coherent, but it lacks some completeness and correctness due to these omissions and additional details.
 
 ---
 
@@ -110,16 +128,20 @@
 
 **Expected Answer:** 請檢查以下欄位值必須相同：oecust_br、oecust_dropship、currency、forwarder、importer、shipvia、shipping_term、shippoint_from、shippoint_to、shippoint_from_city、shippoint_to_city、ship_to、bill_to、sold_to、ship_priority、stat_edi、hold_user、territory
 
-**Generated Answer:** 根據您提供的文件內容，這份文件主要介紹的是 **查詢（Query）** 和 **篩選（Filter）** 的操作方法，例如：
-- 使用「like」關鍵字進行條件查詢（如 `like 1100001867% and like %BCM4708COKFEBG%`）。
-- 使用「Search」功能（按 `Ctrl + F`）。
-- 使用「Simple filter」功能（點擊欄位右鍵選擇）。
+**Generated Answer:** 根據您提供的文件內容，無法合併兩張 shipment no 成一張 packing 的原因在於 **系統的「Group Packing (B2B)」功能尚未啟用或配置錯誤**。
 
-**文件中完全沒有提及任何關於「shipment no」、「packing」或「合併」的內容。**
+具體原因如下：
 
-因此，根據您提供的文件，**無法為您解答為什麼無法合併 shipment no 成一張 packing**。這可能與您使用的系統功能、操作流程或權限有關，但這些內容並未包含在您提供的文件中。建議您查詢系統的「Shipping」或「Packing」相關
+1.  **功能未啟用**：文件第一頁明確指出，要啟用「Group Packing (B2B)」功能，需要在 `DT009` 欄位中進行配置。該功能是「右鍵」或「Group Packing (B2B)」選項，但這項功能是「新建立」的，需要在 `UserDefine Config` 中進行設定。
+2.  **配置錯誤**：文件第二頁提到，`DT009` 的功能一旦修改，會將相關資料回寫到 `DT022`，但一般訂單不會自動傳到 `DT022`。這意味著如果 `DT009
 
-**Reasoning:** The generated answer does not address the question about why two shipment numbers cannot be merged into one packing. It instead discusses query and filter operations, which are irrelevant to the question. The answer is coherent in its structure but completely incorrect and incomplete in terms of content relevance and accuracy.
+**Retrieval:** ✓ Hit | Recall: 0.50 | MRR: 1.00
+
+**Retrieved Pages:** (1, 3)
+
+**Expected Pages:** (1, 2), (1, 3)
+
+**Reasoning:** The generated answer is incorrect as it does not address the specific fields that need to be checked for matching values, which is the core of the reference answer. It instead discusses system configuration issues unrelated to the question. The answer is mostly irrelevant to the question, as it does not focus on the required field checks. While the generated answer is somewhat coherent, it fails to provide the necessary information, leading to low scores in correctness, completeness, and relevance.
 
 ---
 
@@ -129,17 +151,21 @@
 
 **Expected Answer:** 請確認 facility 是否設定會產生 packing no，且 Doc. Status 需符合以下條件：status_document < 70，包含 0 (New open)、2 (Pending By User)、10 (Doc Ready)、11 (Waiting Feed Back)、12 (Waiting for B2B Feed Back)、15 (Ask for Process)、20 (Process Ready)
 
-**Generated Answer:** 根據提供的文件內容，DT092 選好 facility 卻找不到想看的單據，最可能的原因是 **該單據的 facility 欄位值與所選 facility 不匹配**。
+**Generated Answer:** 根據提供的文件內容，DT092 選好 facility 卻找不到想看的單據，可能的原因是 **該 facility 在系統中未被正確設置或未被授權**。
 
-文件第一頁的「Search & filter 二者差異如下」部分明確說明：
-- **Search**：是針對 query 出來的**所有欄位**資料做 search（即全表搜尋）。
-- **Filter**：是針對**單一欄位**做 search（即篩選特定欄位的值）。
+具體分析如下：
 
-在第二頁的「Query 方式介紹」中，也提到「用金手指查資料」時，需要「輸入在同一行，表示二者條件都要成立」，例如 `like 1100001867% and like %BCM4708COKFEBG%`，這表示搜尋條件是跨欄位的。
+1.  **文件中未直接提及 DT092**：在提供的三張圖片中，並未直接出現標題為“DT092”的頁面或說明。
+2.  **相關的 DT092 操作說明缺失**：文件中提及了 DT092 的操作，但僅在第一張圖片的「4. 無法 confirm ship · 卡 close date」部分有提及，但沒有說明其具體操作或錯誤原因。
+3.  **與 DT092 相關的 DT091 選項**：在第二張圖片中，有提及「DT091」，但其內容是關於「DT091
 
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
+**Retrieved Pages:** (1, 8)
 
-**Reasoning:** The generated answer does not address the specific reasons mentioned in the reference answer, such as checking if the facility is set to generate a packing number and ensuring the document status is less than 70. Instead, it discusses search and filter functionalities, which are not relevant to the question. The coherence is slightly better as the answer is structured and understandable, but it fails to provide the correct and complete information needed to answer the question.
+**Expected Pages:** (1, 4)
+
+**Reasoning:** The generated answer does not address the specific reasons mentioned in the reference answer, such as checking if the facility is set to generate a packing number and ensuring the document status is less than 70. Instead, it speculates about system settings and authorization, which are not mentioned in the reference. The answer is somewhat relevant as it attempts to address potential issues with the facility, but it lacks the specific details required. The coherence is moderate as the answer is structured but does not provide the correct information.
 
 ---
 
@@ -149,14 +175,20 @@
 
 **Expected Answer:** 步驟：(1) 先切到 packing 頁籤，把 packing_no query 出來 (2) 把 packing detail 的 data 按右鍵 delete，切到 shipment list 頁籤 (3) 將 shipment no 或 packing no query 出來 (4) 按右鍵 Add shipment to current packing，再切到 carton list 頁籤就會產生新的
 
-**Generated Answer:** 根據您提供的文件內容，**無法還原被刪除的 carton data**。
+**Generated Answer:** 根據提供的文件內容，若在 DT092 中不小心刪除了 carton data，可以透過以下步驟進行還原：
 
-原因如下：
-1.  **文件內容不包含相關資訊**：您提供的三張圖片（第0、1、2頁）僅說明了如何在「Item Master」中使用「Search」和「Filter」功能，並沒有提及任何關於「carton data」的儲存、恢復或備份機制。
-2.  **無備份或恢復步驟**：文件中沒有任何關於「DT092」這個編號的資訊，也沒有說明如何恢復被刪除的資料。通常，若系統有備份功能，會在操作前提示或在系統設定中提供恢復選項，但這些資訊在文件中均未出現。
-3.  **功能範圍不適用**：文件中的「Search」和「Filter」功能是用於篩選和查詢現有資料，
+1.  **進入 Packing 當前頁面**：首先，需要切換到 `Packing` 頁面，這通常在 `Shipping Process` 當中。
+2.  **執行「Add shipment to current packing」**：在 `Packing` 頁面，找到並點擊「Add shipment to current packing」按鈕。此操作會將當前的 shipment 與 packing 關聯起來。
+3.  **切換到 Carton List 頁面**：完成上一步後，系統會自動跳轉或提示您切換到 `Carton List` 頁面。
+4.  **系統自動產生新 carton data**：根據文件中的說明，執行上述步驟後，系統會自動產生新的 carton list data，
 
-**Reasoning:** The generated answer is incorrect as it states that the carton data cannot be restored, which contradicts the reference answer that provides a step-by-step restoration process. It lacks completeness as it does not cover any of the key steps mentioned in the reference. The relevance is low because it does not address the specific question about restoring carton data, instead focusing on unrelated document content. The coherence is relatively high as the answer is well-structured and easy to follow, despite being incorrect.
+**Retrieval:** ✓ Hit | Recall: 0.50 | MRR: 1.00
+
+**Retrieved Pages:** (1, 4)
+
+**Expected Pages:** (1, 4), (1, 5)
+
+**Reasoning:** The generated answer partially matches the reference answer but misses some key steps and details. It correctly identifies the need to switch to the Packing page and perform an action related to 'Add shipment to current packing', but it omits the steps involving querying packing_no and deleting packing detail data. The relevance is mostly maintained as it addresses the question, but the completeness is lacking due to missing steps. The coherence is generally good, with a clear structure, but the overall score is reduced due to the missing details and partial correctness.
 
 ---
 
@@ -166,9 +198,21 @@
 
 **Expected Answer:** 在 User Info 不勾選「小圖示」，改完存檔後要關閉 V5 重開才會生效
 
-**Generated Answer:** 根據提供的三張圖片，這些都是電腦螢幕截圖，顯示的是企業資源規劃（ERP）系統的介面，例如 CBN ACCMIS 和 Arcadyan ARCIMS。這些截圖中並未顯示任何關於「V5 地球」或其 toolbar 圖示可否縮小的資訊。此外，這些截圖中的介面元素（如按鈕、選單、表格）是固定尺寸的，並無提供調整大小的選項。因此，無法從提供的資料中確認「V5 地球上的 toolbar 圖示可以改小嗎？」這個問題的正確答案。
+**Generated Answer:** 根據提供的圖片內容，**V5 toolbar 的圖示可以改小**，但有特定條件。
 
-**Reasoning:** The generated answer does not address the question about changing the toolbar icon size in V5. It incorrectly focuses on unrelated screenshots and does not mention the necessary steps to change the icon size as described in the reference answer. The relevance is low because it does not directly address the question, and the coherence is slightly better as the response is understandable but not relevant.
+圖片中的文字明確指出：
+- **不勾選（小圖示）**：此選項可以將 toolbar 圖示改為小圖示。但需注意，**改完存檔後，要關閉 V5 重開才會生效**。
+- **勾選（大圖示）**：此選項會使用大圖示。
+
+因此，您可以在系統設定中選擇「不勾選」來使用小圖示，但必須在修改完後關閉並重新啟動 V5 系統，設定才能生效。
+
+**Retrieval:** ✓ Hit | Recall: 1.00 | MRR: 1.00
+
+**Retrieved Pages:** (0, 1)
+
+**Expected Pages:** (0, 1)
+
+**Reasoning:** The generated answer is completely accurate, covering all key points from the reference answer. It directly addresses the question by explaining how to change the toolbar icon size in V5, including the necessary step of closing and reopening the application for changes to take effect. The answer is clear, well-structured, and easy to follow, making it fully coherent.
 
 ---
 
@@ -178,18 +222,25 @@
 
 **Expected Answer:** 可以在 System style (系統樣式) 自己選擇要的 format
 
-**Generated Answer:** 根據提供的文件內容，並未提及任何關於「V5 地球登入的 format 可以調整嗎？」的資訊。
+**Generated Answer:** 根據提供的文件內容，**V5 地球登入的 format 是可以調整的**，但有特定的限制和條件。
 
-文件中主要討論的是以下幾個主題：
-- DT022：關於 Order Ack、Confirm Ship、以及 Ship 欄位的設定問題。
-- DT009：關於 shipment 可合併條件及存檔時出現的錯誤訊息。
-- 以及一些系統操作步驟，例如在 Item Master 中使用 Search 功能。
+文件中明確提到以下可調整的項目：
 
-這些內容均與「V5 地球登入的 format」無關，文件中也沒有提供任何關於此項設定或調整的說明。
+1.  **V5 toolbar 大小圖示修改**：
+    *   **小圖示 (不勾選)**：此為預設狀態，但需要在修改完後**關閉並重新開啟 V5**，系統才會生效。
+    *   **大圖示 (勾選)**：此為另一種顯示模式，同樣需要在修改完後**關閉並重新開啟 V5**，系統才會生效。
 
-因此，根據目前提供的資料，無法回答這個問題。
+2.  **System style (系統模式)**：
+    *   文件中有一個截圖顯示了「System Style」欄位，其值為「Office201LightGray」。
+    *   文字說明「System style: 系統模式-> 可以自己選自己要的 format」
 
-**Reasoning:** The GENERATED ANSWER is incorrect as it states that the document does not provide information on adjusting the format for 'V5 地球登入', while the REFERENCE ANSWER clearly states that it can be adjusted in 'System style'. The GENERATED ANSWER is missing all key points from the REFERENCE ANSWER, leading to low completeness. It is somewhat relevant as it attempts to address the question but ultimately fails to provide the correct information. The coherence is moderate as the answer is structured and understandable, but it does not provide the necessary information.
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
+
+**Retrieved Pages:** (0, 1)
+
+**Expected Pages:** (0, 2)
+
+**Reasoning:** The GENERATED ANSWER correctly states that the V5 Earth login format can be adjusted and mentions the System style, which aligns with the REFERENCE ANSWER. However, it includes additional details about toolbar icon size adjustments, which are not mentioned in the REFERENCE ANSWER. This makes the answer mostly accurate but with minor extraneous details. The answer is relevant and directly addresses the question, and it is well-structured and coherent.
 
 ---
 
@@ -199,30 +250,22 @@
 
 **Expected Answer:** 首先把要改的資料改好，按住 Shift 把要改的資料全選起來，滑鼠點在最後一筆，按右鍵選擇 Fill Down Current Column
 
-**Generated Answer:** 在您提供的圖片中，並**沒有**顯示「Fill Down Current Column」這個功能或按鈕。這表示：
+**Generated Answer:** 根據圖像內容，使用「Fill Down Current Column」的方法如下：
 
----
+1.  **選取資料**：首先，將需要修改的資料（例如，圖像中「Stock Room」欄位）全部選中。在圖像中，選取的是從第10行到第28行的「Stock Room」欄位。
+2.  **定位滑鼠**：將滑鼠點在選取資料的最後一筆（即第28行）。
+3.  **執行操作**：按右鍵，會出現一個上下文選單，其中包含「Fill Down Current Column」選項。
+4.  **確認執行**：點擊「Fill Down Current Column」，系統就會將選取範圍內的資料，依序向下填滿到該欄位的其他未填寫行。
 
-### ❗️「Fill Down Current Column」並非您圖片中顯示的選項
+此操作的目的是將一整列的資料（如「Stock Room」）快速填入下方
 
-您圖片中顯示的是：
+**Retrieval:** ✓ Hit | Recall: 1.00 | MRR: 1.00
 
-- 「Filter Editor」（過濾條件）
-- 「Sort Ascending / Descending」
-- 「Group By This Column」
-- 「Show Group Panel」
-- 「Filter Editor...」（被紅框標示）
-- 以及「Part No」欄位的過濾條件設定（如 `Part No is like %A`）
+**Retrieved Pages:** (0, 12)
 
----
+**Expected Pages:** (0, 12)
 
-## ✅ 「Fill Down Current Column」是什麼？
-
-「Fill Down Current Column」（或稱「下拉填充」、「向下填充當前欄位」）是 Excel 或某些資料表軟體（如 SAP、Oracle、某些 ERP 系統）中常用的功能，用於：
-
-> **將當前欄位中
-
-**Reasoning:** The generated answer does not address the question of how to use 'Fill Down Current Column' at all. Instead, it discusses the absence of this feature in a provided image and lists unrelated features. It fails to provide any steps or instructions related to the question, making it completely incorrect and irrelevant. The coherence is slightly better as the text is structured, but it is not relevant to the question.
+**Reasoning:** The GENERATED ANSWER is mostly accurate and aligns well with the REFERENCE ANSWER. It correctly describes the steps to use 'Fill Down Current Column', including selecting the data, positioning the mouse, and executing the operation. However, it introduces additional context about the specific data ('Stock Room' and row numbers) which is not present in the REFERENCE ANSWER. This does not detract from correctness but adds unnecessary detail. The answer is complete, covering all key steps, and is directly relevant to the question. It is also well-structured and easy to follow.
 
 ---
 
@@ -232,21 +275,21 @@
 
 **Expected Answer:** Append Data 是 insert 的概念，以地球畫面為主新增進來。Update Destination 是 update 的概念，以要 Import 的檔案為主。若 part no 勾選 key Match，表示以 part no 為主，檔案裡 part no 只能唯一不能重複，若重複則以地球上的排序順序更新（找第一筆去更新）
 
-**Generated Answer:** 在数据集成或ETL（Extract, Transform, Load）工具中，如 **Alteryx**、**Informatica**、**Talend**、**Microsoft Power BI** 或 **Google Data Studio** 等，**Import File**、**Append Data** 和 **Update Destination** 是三种常见的数据操作方式，它们的用途和区别如下：
+**Generated Answer:** 根據提供的圖像內容，Import file 的用途是用於從外部的 Excel 檔案中匯入資料到當前的系統中。
 
----
+關於 Append Data 和 Update Destination 的差別：
 
-## ✅ 1. Import File（导入文件）
+1.  **Append Data (新增資料)**：此選項的用途是「insert 的概念，以地球畫面為主，新增進來」。這表示系統會將匯入的資料作為新的記錄添加到資料庫中，不會覆蓋已有的資料。圖像中顯示「Append Data」選項被勾選，並有文字說明其為「新增進來」。
 
-### 📌 用途：
-将外部文件（如 CSV、Excel、JSON、TXT 等）中的数据**导入到目标系统或数据表中**，通常用于**首次加载数据**或**初始化数据仓库**。
+2.  **Update Destination (更新資料)**：此選項的用途是「update 的概念」。它會以「Import 的那份檔案為主」，根據「part no」作為關鍵字（Key Match）來匹配已存在的資料。如果匯入的「part no」與系統中已有的資料相同，則會更新該
 
-### 🧩 特点：
-- 一般用于**首次加载**或**清空后重新加载**数据。
-- 通常会**覆盖目标表中的现有数据**（除非指定保留策略）。
-- 适用于**数据源是文件**，且目标是数据库或
+**Retrieval:** ✓ Hit | Recall: 1.00 | MRR: 1.00
 
-**Reasoning:** The GENERATED ANSWER does not address the specific question about the differences between 'Append Data' and 'Update Destination' as described in the REFERENCE ANSWER. It instead provides a general explanation of 'Import File' in the context of data integration tools, which is not relevant to the specific concepts of 'Append Data' and 'Update Destination' as defined in the reference. The answer is somewhat coherent but lacks the necessary details and relevance to the question asked.
+**Retrieved Pages:** (0, 13)
+
+**Expected Pages:** (0, 13)
+
+**Reasoning:** The GENERATED ANSWER is mostly accurate and covers the key points about the differences between Append Data and Update Destination. It correctly explains the insert and update concepts and mentions the use of 'part no' as a key match. However, it omits the detail about the uniqueness requirement of 'part no' and the update process based on the sorting order. The answer is directly relevant to the question and is well-structured and coherent.
 
 ---
 
@@ -256,14 +299,20 @@
 
 **Expected Answer:** Search 是針對 query 出來的所有欄位資料做搜尋；Filter 過濾條件是針對單一欄位做搜尋
 
-**Generated Answer:** 根據提供的文件內容，**Search（搜尋）** 和 **Filter（篩選）** 是兩個不同的功能，主要差異在於它們的運作方式和用途：
+**Generated Answer:** 根據圖片二的說明，Search 和 Filter 的差異在於作用範圍和目的：
 
-1.  **Search (搜尋)**：
-    *   **運作方式**：通常是在一個欄位或整個資料表中，根據特定的關鍵字或條件進行全表搜尋。它會返回所有符合條件的記錄。
-    *   **用途**：用於快速定位特定的資料。例如，在「Inventory Trans」的「Apply No」欄位中，輸入「A1000022」，系統會搜尋所有與此編號相關的記錄。
-    *   **文件中例證**：在「Inventory Trans」的介面中，有「Retrieve」按鈕，其功能是根據輸入的「Apply No」來搜尋對應的資料。同時，文件中
+*   **Search (搜尋)**：是針對 **query 出來的所有欄位資料** 進行搜尋。這表示搜尋會掃描整個查詢結果集中的所有欄位，以找到符合條件的資料。
+*   **Filter (過濾)**：是針對 **單一欄位** 進行過濾。這表示過濾會只針對某一個特定的欄位，根據設定的條件（例如「等於」、「包含」、「大於」等）來篩選資料，從而顯示符合條件的行。
 
-**Reasoning:** The GENERATED ANSWER provides a detailed explanation of 'Search' but does not adequately address 'Filter' as described in the REFERENCE ANSWER. It partially captures the concept of 'Search' but introduces additional details not present in the reference. The explanation of 'Filter' is missing, which affects completeness and correctness. The answer is mostly relevant to the question and is coherent, but it lacks the necessary comparison to fully address the question.
+簡單來說，Search 是在整個結果集中找資料，而 Filter 是在單一欄位上篩選資料。
+
+**Retrieval:** ✓ Hit | Recall: 1.00 | MRR: 1.00
+
+**Retrieved Pages:** (0, 8)
+
+**Expected Pages:** (0, 8)
+
+**Reasoning:** The GENERATED ANSWER accurately describes the difference between Search and Filter, matching the REFERENCE ANSWER. It covers all key points, directly addresses the question, and is clear and well-structured. The explanation of Search and Filter is consistent with the reference, providing additional context without deviating from the core information.
 
 ---
 
@@ -273,15 +322,20 @@
 
 **Expected Answer:** 快速鍵是 Ctrl + F，會多一個 search 欄位。另外也可以按右鍵 -> Data Process -> Search
 
-**Generated Answer:** 根據圖片 1 中的截圖，顯示了在「Shipping Process」模組的「Packing」選單中，有「Search」功能。其快捷鍵為 **Ctrl + F**。
+**Generated Answer:** 根據圖片中的文字說明，Search 的快速鍵是 `ctrl + f`。除了使用這個快速鍵，還可以透過以下方式進行搜尋：
 
-此外，根據圖片 1 中的文字說明，除了使用快捷鍵，還有以下方式可以進行搜尋：
-1.  在「Packing」選單中，點擊「Search」按鈕。
-2.  在「Packing」選單中，點擊「View Packing」按鈕，然後在彈出的視窗中使用「Search」功能。
+1.  **直接點擊搜尋按鈕**：在介面中，可以找到一個形狀像放大鏡的搜尋按鈕，點擊即可啟動搜尋功能。
+2.  **點擊欄位名稱並選擇「Hide Search Panel」**：在搜尋面板中，可以點擊欄位名稱旁的「右箭頭」圖示，然後選擇「Hide Search Panel」，這會隱藏搜尋面板，但搜尋功能仍可使用。
 
-因此，搜尋的快速鍵是 **Ctrl + F**，除此之外，也可以透過點擊選單中的「Search」按鈕或「View Packing」後的搜尋功能來進行。
+因此，搜尋功能提供了多種操作方式，包括快捷鍵、按鈕點擊以及介面內的選項。
 
-**Reasoning:** The generated answer correctly identifies the shortcut key as Ctrl + F, which matches the reference. However, it introduces additional methods for searching that are not mentioned in the reference answer, such as clicking the 'Search' button or using 'View Packing'. This results in partial correctness and completeness. The relevance is mostly maintained as it addresses the question, but the extra details slightly deviate from the reference. The coherence is generally good, with a clear structure and logical flow.
+**Retrieval:** ✓ Hit | Recall: 0.50 | MRR: 1.00
+
+**Retrieved Pages:** (0, 5)
+
+**Expected Pages:** (0, 5), (0, 10)
+
+**Reasoning:** The GENERATED ANSWER correctly identifies 'Ctrl + F' as the shortcut for search, matching the REFERENCE ANSWER. However, it introduces additional methods for searching that are not mentioned in the REFERENCE ANSWER, such as clicking a search button and using the 'Hide Search Panel' option, which are not verified. The GENERATED ANSWER is mostly relevant to the question but includes extra details not found in the REFERENCE ANSWER. The coherence is generally good, with a clear structure, but the additional unverified methods affect the correctness and completeness.
 
 ---
 
@@ -291,21 +345,22 @@
 
 **Expected Answer:** 直接按 X 關閉，或是把欄位內容清成空白
 
-**Generated Answer:** 根据提供的文档内容，其中并未包含任何关于“如何取消 search”的说明或操作步骤。
+**Generated Answer:** 根據提供的圖像與文字說明，取消 Search 的方法如下：
 
-文档主要围绕以下几个主题：
-- DT011 和 DT136 的区别及操作（如删除 Apply No.）
-- DT166 的 release 操作（如处理未知描述）
-- DT185 的操作（如不做 picking）
-- FT039 的操作（如维护客户信息、配置值）
-- DT166 和 DT175 的 facility 选择逻辑
-- 如何将两票 shipment 合并为一张 invoice
+1.  **點選欄位**：首先，您需要點選您希望取消搜尋的欄位。
+2.  **按右鍵**：然後，按右鍵以打開該欄位的上下文選單。
+3.  **選擇「Search」**：在彈出的選單中，找到並點選「Search」選項。
+4.  **確認取消**：點選「Search」後，會彈出一個對話框，其中包含「OK」、「Clear」和「Cancel」三個按鈕。此時，您需要點選「Clear」按鈕，以清除該欄位的搜尋條件。
 
-所有截图和文字描述均未提及任何与“取消搜索”（取消 search）相关的功能或操作方法。
+此操作與「Clear Filter」的步驟類似，但針對的是 Search 搜尋功能，而非過濾器（Filter）。
 
-因此，基于现有文档，无法提供“如何取消 search”的答案。
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
-**Reasoning:** The GENERATED ANSWER does not provide the correct method to cancel a search as described in the REFERENCE ANSWER. It states that the document does not contain relevant information, which is incorrect according to the reference. The answer is mostly irrelevant to the question as it does not address the method of canceling a search. However, the answer is coherent and well-structured, making it easy to follow.
+**Retrieved Pages:** (0, 8)
+
+**Expected Pages:** (0, 5)
+
+**Reasoning:** The GENERATED ANSWER provides a complex method involving multiple steps to cancel a search, which does not align with the simple methods described in the REFERENCE ANSWER. The reference suggests simply pressing 'X' or clearing the field, while the generated answer involves right-clicking and selecting options from a menu. This results in low correctness and completeness scores. The relevance is somewhat maintained as it addresses the question of canceling a search, but the method is incorrect. The coherence is relatively high as the answer is well-structured and easy to follow, despite being incorrect.
 
 ---
 
@@ -315,13 +370,23 @@
 
 **Expected Answer:** 點選欄位，按右鍵 Data Process -> Simple filter
 
-**Generated Answer:** 根據提供的圖片內容，並未顯示「Simple filter」這個功能或按鈕。
+**Generated Answer:** 根據圖像內容，Simple filter 的位置在 **Data Process 菜單的子選項中**。
 
-在第一張圖片中，展示了「AdmSlip Maintenance」和「AdmSlip Maintenance」的螢幕截圖，但沒有「Simple filter」的選項。在第二張圖片中，展示了「Shipping Transaction」和「Shipping List」的螢幕截圖，也沒有「Simple filter」的選項。在第三張圖片中，展示了「Normal Requisition」和「Customer Maintain」的螢幕截圖，同樣沒有「Simple filter」的選項。
+具體來說：
 
-因此，根據提供的資料，無法確定「Simple filter」在哪邊。可能這個功能並不存在於這些螢幕截圖中，或者它被隱藏在其他未顯示的選項中。
+1.  在圖像 1 中，當您右鍵點擊表格中的「Part No」欄位時，會出現一個上下文選單。這個選單中包含「Data Process」選項。
+2.  在「Data Process」選項的下拉選單中，可以清楚看到「Simple Filter」這個按鈕。
+3.  在圖像 2 中，同樣地，當您點擊「Data Process」選單時，其下拉選單中也包含「Simple Filter」選項。
 
-**Reasoning:** The GENERATED ANSWER does not provide the correct location of 'Simple filter' as described in the REFERENCE ANSWER. It fails to mention the process of right-clicking on a field and selecting 'Data Process -> Simple filter'. The answer is mostly irrelevant to the question as it focuses on the absence of 'Simple filter' in the images rather than addressing the question directly. The coherence is somewhat maintained as the answer is understandable, but it is not structured to address the question effectively.
+因此，Simple filter 是從「Data Process」選單中呼叫的。在圖像 1 的示例中，它被用來篩選「Part No」欄位中包含「%MAS」或「BROA」的資料。
+
+**Retrieval:** ✓ Hit | Recall: 1.00 | MRR: 1.00
+
+**Retrieved Pages:** (0, 9)
+
+**Expected Pages:** (0, 9)
+
+**Reasoning:** The GENERATED ANSWER is mostly accurate and covers the key points of the REFERENCE ANSWER. It correctly identifies that the 'Simple filter' is accessed through the 'Data Process' menu, which matches the reference. However, it includes additional details about images and specific examples that are not present in the REFERENCE ANSWER, which could be seen as unnecessary for the question. The answer is directly relevant to the question and is well-structured and coherent.
 
 ---
 
@@ -331,27 +396,21 @@
 
 **Expected Answer:** DT073
 
-**Generated Answer:** 根據提供的清單，**開立 PR（Purchase Requisition）** 的功能在 **「PR Entry · Create PR」** 這一行中明確列出。
+**Generated Answer:** 根據提供的文件內容，開立 PR（Purchase Requisition）的程式並未明確列出。文件中提及了與 PR 相關的幾個功能，例如：
 
-這行的英文是：  
-**PR Entry · Create PR**
+- 在第0頁，有「PR Entry · Create PR」，這顯示了 PR 的建立功能。
+- 在第1頁，有「PR Entry · Create PR」，這再次確認了 PR 的建立功能。
+- 在第2頁，有「PR to PO (MRP)」，這表示 PR 可以轉為 PO。
 
----
+然而，文件中並未明確指出「開立 PR」是哪一支特定的程式。因此，根據提供的資訊，無法確定開立 PR 是在哪支程式。
 
-✅ **答案：PR Entry · Create PR**
+**Retrieval:** ✓ Hit | Recall: 0.50 | MRR: 1.00
 
-這表示在該系統中，開立採購申請（Purchase Requisition）的功能是透過 **PR Entry** 模組來執行，並稱為 **Create PR**。
+**Retrieved Pages:** (2, 11)
 
----
+**Expected Pages:** (2, 4), (2, 11)
 
-📌 **補充說明**：  
-在許多ERP系統（如SAP、Oracle、或自訂系統）中，「PR Entry」通常指「採購申請單」的建立功能，是採購流程的起點。此清單中也包含其他相關功能，如「RMA Order Entry」、「RTV purchase order」等，但「PR Entry」是專門用於開立 PR 的。
-
----
-
-✅ 所以，**開立 PR 是
-
-**Reasoning:** The GENERATED ANSWER is incorrect as it does not mention 'DT073', which is the correct answer according to the REFERENCE ANSWER. It instead provides information about 'PR Entry · Create PR', which is not relevant to the question. The answer is mostly irrelevant to the question asked, as it does not address the specific program 'DT073'. However, the answer is coherent and well-structured, making it easy to follow, but it fails to provide the correct and complete information required by the question.
+**Reasoning:** The generated answer fails to provide the correct program name 'DT073' for opening a PR, as specified in the reference answer. It instead discusses the absence of specific information in the document, which is incorrect. While the response is somewhat relevant to the topic of PR creation, it does not address the question directly. The coherence is relatively high as the answer is well-structured and easy to follow, but the lack of correct and complete information significantly lowers the overall score.
 
 ---
 
@@ -361,16 +420,22 @@
 
 **Expected Answer:** DT007
 
-**Generated Answer:** 根據提供的文件內容，開立 Purchase Order (PO) 的程式是 **PO change Buyer**。
+**Generated Answer:** 根據提供的圖片內容，開立 Purchase Order 的程式是 **ARCADY (運營系統)**。
 
-在文件的第三頁（圖片 2）中，有一項明確列出：
-- **PO change Buyer**：可針對單筆 po no 找出 buyer，或輸入 buyer 帶出名下所有 po no
+具體來說：
+- 圖片中顯示的程式名稱為 **ARCADY (運營系統)**，並標註為 **ARCADY (運營系統) (Server-arc-jsqj) ARCIMS 5**。
+- 在第二張圖片中，畫面標題為 **(DT073) 1: Create Purchase Order-W_po_1003_01.xmi**，這直接表明了該程式正在處理「開立 Purchase Order」的作業。
+- 這與第一張圖片中顯示的 **(AT000) User Information-W_sys_user_configuration.xmi** 系統設定頁面不同，後者是用戶設定頁面，而非實際的訂單開立頁面。
 
-雖然文件中未直接標示「開立 PO」的程式名稱，但「PO change Buyer」這個功能是針對已存在的 PO 進行修改買方的，這與開立新 PO 的操作是不同的。然而，在文件的第二頁（圖片 1）中，有提到「PO BILL，月結對帳單」，這暗示了與 PO 有關的其他功能。但根據文件內容，最直接與「開立 PO」相關的程式名稱並未明確列出，而是「PO change Buyer」。
+因此，開立 Purchase Order 的程式是 **ARCADY 運營
 
-此外，在文件的第二頁（圖片 1）中，
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
-**Reasoning:** The generated answer incorrectly identifies 'PO change Buyer' as the program for opening a Purchase Order, while the reference answer specifies 'DT007'. The generated answer does not cover the key point from the reference answer and is mostly irrelevant to the question. The coherence is somewhat maintained, but the content is incorrect and incomplete, leading to a low overall score.
+**Retrieved Pages:** (0, 1)
+
+**Expected Pages:** (2, 3), (2, 11)
+
+**Reasoning:** The GENERATED ANSWER incorrectly identifies the program for creating a Purchase Order as 'ARCADY (運營系統)' instead of the correct 'DT007'. It provides additional details that are not relevant to the correct answer, leading to a low relevance score. The answer is somewhat coherent in its structure, but the incorrect information significantly impacts its overall quality.
 
 ---
 
@@ -380,24 +445,22 @@
 
 **Expected Answer:** DR075
 
-**Generated Answer:** 根據提供的資料，**PR Report** 並未直接列出。然而，從上下文推斷，您可能是指 **PR Entry**（PR 記錄）或與之相關的 **PR Report**（PR 報表）。
+**Generated Answer:** 根據提供的圖片內容，PR Report 是在 **ARCMS 5** 系統中。
 
-在提供的清單中，有以下相關項目：
+具體來說：
+- 在第二張圖片的「Title Menu」中，可以看到標題為「(OT073) 2. Create Purchase Request-W_po_003_01.xaml」，這表示該頁面是用於建立採購請單的。
+- 在該頁面的「Functions」區塊中，有「PR Report」這個選項，這表示 PR Report 是這個系統的內建功能。
+- 在第一張圖片中，雖然有「ImportExcelConfig」的介面，但這是一個用於匯入資料的工具，與 PR Report 本身無直接關聯。
 
-- **PR Entry · Create PR** → 這表示「PR 記錄」或「創建 PR」的功能。
-- **PR Property Config** → 這表示「PR 屬性設定」，可能與 PR 報表相關。
-- **Maintain Require** → 可能與 PR 有關的維護功能。
-- **Vendor Contract Date Maintain** → 供應商合約日期維護，與 PR 有關。
+因此，根據圖片顯示的介面和標題，可以確定 PR Report 是在 **ARCMS 5** 系統中。
 
-但**沒有明確標示「PR Report」**的項目。
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
----
+**Retrieved Pages:** (0, 16)
 
-### 結論：
+**Expected Pages:** (2, 1), (2, 8)
 
-**根據提供的清單，並無「PR Report」的明確項目，
-
-**Reasoning:** The generated answer is incorrect as it does not mention 'DR075', which is the correct answer. It is incomplete because it fails to provide the specific program where the PR Report is located. The relevance is low because it does not directly address the question, instead providing unrelated information about other programs. The coherence is somewhat understandable, but the structure is not directly answering the question, leading to a low overall score.
+**Reasoning:** The GENERATED ANSWER incorrectly identifies the system as 'ARCMS 5' instead of 'DR075', which is the correct answer according to the REFERENCE ANSWER. It provides additional details that are not relevant to the question, leading to a low relevance score. The answer is coherent and well-structured, but it fails to provide the correct and complete information required by the question.
 
 ---
 
@@ -407,13 +470,23 @@
 
 **Expected Answer:** DR007
 
-**Generated Answer:** 根據提供的資料，在第一張圖片的「功能說明」部分，有提到「PO Status Inquiry · po status · price · Maintain Need Date, ETD,ETA 功能」，這表示 PO status 的查詢功能是透過「PO Status Inquiry」這個功能來進行的。
+**Generated Answer:** 根據提供的文件內容，查詢 PO status、PO up 相關資訊是在 **RMA history** 程式中。
 
-然而，這張圖片並未明確指出這個功能是在哪支程式中實現的。但根據上下文和常見的企業系統架構，這類功能通常會在「CBN ACCMIS V3」或類似的供應鏈管理系統中實現。此外，在第二張圖片中，我們可以看到「CBN ACCMIS V3 System」的螢幕截圖，這暗示了該系統是處理 PO 相關資訊的主系統。
+在第二張圖片的「功能說明」部分，有明確列出：
+> RMA history
+> 可以看出該料號在各庫房的分佈狀況
+> 查詢單據異動，可查料在所有有倉的交易記錄，Apply date:秀出有過帳及未過帳的資料
+> PO Status Inquiry，查po status · price · Maintain Need Date, ETD,ETA 功能，鎖cnc buyer 只能看到自己負責picking list & picking report
 
-綜合來看，雖然資料中沒有明確標示「PO Status Inquiry」功能是在哪支程式中，但根據螢幕截圖和功能描述，最有可能的程式是「
+這段文字清楚說明「PO Status Inquiry」是 RMA history 程式中的功能，用於查詢 PO 的狀態（status）、價格（price）、維護需求日期（Need Date）、ETA 等資訊，並提到「鎖cnc buyer 只能看到自己負責」，
 
-**Reasoning:** The generated answer does not correctly identify the specific program 'DR007' as the reference answer does. It speculates on possible systems without providing a definitive answer, which affects correctness and completeness. The relevance is somewhat maintained as it discusses related systems and functions, but it does not directly answer the question. The coherence is moderate, as the answer is understandable but lacks a clear conclusion. Overall, the generated answer fails to provide the precise information required by the question.
+**Retrieval:** ✓ Hit | Recall: 0.50 | MRR: 1.00
+
+**Retrieved Pages:** (2, 8)
+
+**Expected Pages:** (2, 1), (2, 8)
+
+**Reasoning:** The generated answer incorrectly identifies 'RMA history' as the program for querying PO status and related information, while the reference answer specifies 'DR007'. The generated answer is mostly irrelevant to the question as it provides incorrect information. The coherence is somewhat maintained as the answer is structured and understandable, but it does not align with the correct information. Overall, the generated answer fails to provide the correct and complete information as per the reference answer.
 
 ---
 
@@ -423,16 +496,21 @@
 
 **Expected Answer:** DT011
 
-**Generated Answer:** 根據提供的文件內容，開立請領/入庫單的程式是 **Inventory Transaction - Picking**。
+**Generated Answer:** 根據提供的三頁內容，開立請領/入庫單的程式是 **Item Master Sale (Packing Info)**。
 
-在第一張圖片中，有一行文字明確提到：
-**Inventory Transaction - Picking**，並附註說明「當做了DT141 pick時，allocatet資料就會被搬走」。
+在第1頁的「結算作業」部分，有「Item Master Sale (Packing Info)」這個項目，其說明是「開立請領/入庫單」。這直接對應了您的問題。
 
-這表示「Inventory Transaction - Picking」是處理請領/入庫單的程式。此外，第二張圖片中也顯示了「Inventory Transaction - Picking」的選項，進一步佐證了其功能。
+雖然第1頁的「Item Master Sale (Packing Info)」被標註為「開立請領/入庫單」，但第2頁的「Item Master Sale (Packing Info)」被標註為「開立請領/入庫單」，這表明該功能在不同頁面被重複提及，但其功能描述一致。
 
-因此，開立請領/入庫單應使用 **Inventory Transaction - Picking** 程式。
+因此，開立請領/入庫單的程式是 **Item Master Sale (Packing Info)**。
 
-**Reasoning:** The generated answer is incorrect as it identifies the wrong program ('Inventory Transaction - Picking') instead of the correct one ('DT011') for opening a requisition/receipt order. It does not cover any key points from the reference answer, which is simply the correct program code. While the answer is somewhat relevant to the question, it ultimately provides incorrect information. The coherence is relatively high as the answer is well-structured and easy to follow, but this does not compensate for the incorrectness and lack of completeness.
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
+
+**Retrieved Pages:** (2, 12)
+
+**Expected Pages:** (2, 3), (2, 10)
+
+**Reasoning:** The generated answer is incorrect as it identifies 'Item Master Sale (Packing Info)' as the program for opening requisition/receipt orders, whereas the reference answer specifies 'DT011'. The generated answer does not cover any key points from the reference answer, leading to low completeness. While the answer is somewhat relevant to the question, it does not provide the correct information. The coherence is relatively high as the answer is well-structured and easy to follow, but the overall score is low due to the incorrectness and lack of completeness.
 
 ---
 
@@ -442,16 +520,19 @@
 
 **Expected Answer:** DT012
 
-**Generated Answer:** 根據提供的三張圖片內容，並未直接提及「請領/入庫單扣帳」這個具體操作的執行程式。
+**Generated Answer:** 根據提供的三張圖片內容，「請領/入庫單扣帳」這個操作並未直接在任何一張圖片中明確標示其執行的程式名稱。
 
-然而，我們可以從上下文推斷：
-- 第一張圖片列出了「Inventory Transaction - Picking」，這代表了從倉庫取出貨品的流程，通常與「請領」相關。
-- 第二張圖片討論了「DT022」的「Order Ack」與「Ship」，這與訂單確認和發貨有關，而「入庫單」通常是在發貨後才會產生。
-- 第三張圖片則是關於「Clear Filter」的說明，與扣帳無關。
+然而，從上下文推斷，這類操作通常會在「RMA」（Return Material Authorization，退貨授權）或「Inventory」（庫存）相關的模組中進行。在圖片一中，有「RMA Order Entry」和「RMA Receive」等項目，這暗示了退貨與收貨流程。在圖片二中，有「RMA Repair」和「RMA Receive」，進一步強化了這類操作與 RMA 的關聯。
 
-雖然「請領/入庫單扣帳」在這些圖片中沒有明確標示，但根據常見的ERP系統邏輯，「請領/入庫單扣帳」通常是在「Inventory Transaction」或「Stock Taking」等模組
+雖然沒有明確指出「請領/入庫單扣帳」是哪支程式，但根據常見的業務流程，這類操作通常會在「RMA」或「Inventory」模組中執行。因此，可以推斷這是在「R
 
-**Reasoning:** The generated answer does not correctly identify the program 'DT012' as the one where '請領/入庫單扣帳' is executed, which is the key fact in the reference answer. It instead provides an analysis based on images that are not part of the reference answer, leading to incorrect conclusions. The answer is somewhat relevant as it attempts to address the question, but it fails to provide the correct and complete information. The coherence is relatively high as the answer is well-structured and easy to follow, but the lack of correct and complete information significantly impacts the overall score.
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
+
+**Retrieved Pages:** (2, 12)
+
+**Expected Pages:** (2, 3), (2, 10)
+
+**Reasoning:** The GENERATED ANSWER does not provide the correct program name 'DT012' as specified in the REFERENCE ANSWER, making it incorrect and incomplete. It speculates about possible modules without confirming the exact program, which is irrelevant to the specific question asked. The answer is somewhat coherent but lacks the necessary information to be useful.
 
 ---
 
@@ -461,21 +542,19 @@
 
 **Expected Answer:** DT016
 
-**Generated Answer:** 根據提供的文件內容，**沒有提及任何可以「MRP 轉 PR 直接產生 PR」的程式或功能**。
+**Generated Answer:** 根據提供的資料，有程式可以 MRP 轉 PR 直接產生 PR。在第 0 張圖片中，有明確的說明：
 
-文件第一頁列出的內容是各種系統操作與維護功能的清單，例如：
-- Item Master (Footprint) - 原料進貨數量計算
-- P/O Contract - 訂單制式貿易條款
-- QVL Maintain - 固資自用折合
-- PR Entry - Create PR
-- Group Pick List
-- Item Master Transaction (W/H Special Entry)
+**MRP 轉 PR**：在「MRP 轉 PR」的項目下，有提到「ACCBUY/MRP」，這表示有程式可以將 MRP 轉換為 PR，並直接產生 PR。
 
-雖然清單中包含「PR Entry」這個項目，但這僅表示「可以建立 PR」，並未提及任何「自動化」或「由 MRP 觸發」的流程。文件中也沒有任何關於「MRP 轉 PR」自動化功能的說明。
+因此，答案是：**ACCBUY/MRP**。
 
-此外，第二頁的內容是關於「Search & filter」的差異說明，與
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
-**Reasoning:** The generated answer is incorrect as it states there is no program for MRP to PR conversion, while the reference answer clearly indicates 'DT016' as the program. The generated answer does not cover any key points from the reference answer, which is simply the program name. It is somewhat relevant as it discusses the topic of MRP to PR conversion, but it ultimately fails to provide the correct information. The coherence is moderate as the answer is structured and understandable, but it does not address the question correctly.
+**Retrieved Pages:** (2, 11)
+
+**Expected Pages:** (2, 3), (2, 10), (2, 12)
+
+**Reasoning:** The generated answer incorrectly identifies 'ACCBUY/MRP' as the program for MRP to PR conversion, while the reference answer specifies 'DT016'. The generated answer is mostly irrelevant to the correct program name, though it does attempt to address the question. The coherence is relatively high as the answer is structured and easy to follow, but the factual inaccuracy significantly impacts the correctness and completeness.
 
 ---
 
@@ -485,9 +564,15 @@
 
 **Expected Answer:** DT154
 
-**Generated Answer:** 根據圖片一的內容，「供應商EOL,COST/LT/MOQ/share rate maintain/last buy up/last receive up/buyer/sourcer」相關資料的維護功能是在「Item Master Purchase Property Maintain」這個程式中進行的。這項功能位於圖片一的中段，與「Inventory StockRoom & Location」等其他維護功能並列。因此，相關資料維護的程式是「Item Master Purchase Property Maintain」。
+**Generated Answer:** 根據提供的資料，在第二頁的「Inventory StockRoom & Location」項目下，有明確提到「供應商EOL,COST/LT/MOQ/share rate maintain/last buy up/last receive up/buyer/sourcer」，這項功能是用於維護這些供應商相關的資料。從上下文推斷，這項功能屬於「Inventory StockRoom & Location」模組，而「Inventory StockRoom & Location」是「Inventory」模組下的子功能。因此，查詢這些資料是在「Inventory」程式中進行的。
 
-**Reasoning:** The GENERATED ANSWER is incorrect as it provides a different program name ('Item Master Purchase Property Maintain') than the one specified in the REFERENCE ANSWER ('DT154'). It does not cover any key points from the reference answer, which is simply the program name. The relevance is low because the answer does not directly address the question with the correct program name, though it attempts to provide related information. The coherence is relatively high as the answer is well-structured and easy to follow, but it is ultimately incorrect and incomplete.
+**Retrieval:** ✓ Hit | Recall: 0.50 | MRR: 1.00
+
+**Retrieved Pages:** (2, 12)
+
+**Expected Pages:** (2, 5), (2, 12)
+
+**Reasoning:** The generated answer is incorrect as it does not mention 'DT154', which is the correct program for querying the specified supplier data. It instead provides an unrelated explanation about an 'Inventory StockRoom & Location' module, which is not mentioned in the reference answer. The answer is mostly irrelevant to the question, as it does not address the specific program needed. While the response is somewhat coherent, it fails to provide the correct or complete information, leading to low scores in correctness, completeness, and relevance.
 
 ---
 
@@ -497,9 +582,21 @@
 
 **Expected Answer:** DT157
 
-**Generated Answer:** 根據提供的資料，並未明確指出「Price Book (PO) maintain」是哪支程式。在第0頁的列表中，有「Price Book (PO)」這個項目，但沒有標註其對應的程式名稱。同樣地，第1頁和第2頁也沒有提及這個項目與特定程式的關聯。因此，根據現有資訊，無法確定「Price Book (PO) maintain」是哪支程式。
+**Generated Answer:** 根據提供的資料，Price Book (PO) maintain 的維護功能並未明確指出是在哪支程式中。資料中提到的相關程式包括：
 
-**Reasoning:** The generated answer is incorrect as it fails to identify 'DT157' as the program for 'Price Book (PO) maintain'. It does not cover any key points from the reference answer, which is simply the program name. The relevance is somewhat maintained as it discusses the topic but fails to provide the correct information. The coherence is relatively high as the answer is clear and well-structured, but it ultimately does not provide the correct or complete information needed.
+- 在第 1 張圖片中，有「Price Book (PO)」的條目，但未標示程式名稱。
+- 在第 2 張圖片中，有「Price Book (PO)」的條目，同樣未標示程式名稱。
+- 在第 2 張圖片中，有「Price Book Maintain(CR)」的條目，但這與「Price Book (PO)」不同。
+
+因此，根據提供的資料，無法確定「Price Book (PO) maintain」是在哪支程式中。
+
+**Retrieval:** ✓ Hit | Recall: 0.50 | MRR: 1.00
+
+**Retrieved Pages:** (2, 12)
+
+**Expected Pages:** (2, 5), (2, 12)
+
+**Reasoning:** The generated answer is incorrect as it fails to provide the correct program name 'DT157' for 'Price Book (PO) maintain'. It does not cover any key points from the reference answer, which is simply the program name. The relevance is somewhat maintained as it discusses the topic but fails to answer the question directly. The coherence is relatively high as the answer is well-structured and easy to follow, despite being incorrect.
 
 ---
 
@@ -509,9 +606,23 @@
 
 **Expected Answer:** DT139
 
-**Generated Answer:** 根據圖片二的內容，「SO Price book maintain」這個項目在「Price Book (PO)」的下方，屬於「Global PO Price Book maintain」的相關功能。因此，它是在「Global PO Price Book maintain」這個程式中進行維護的。
+**Generated Answer:** 根據提供的文件內容，**SO Price book maintain** 並未直接列出在任何程式名稱中。文件中提及的相關程式包括：
 
-**Reasoning:** The GENERATED ANSWER is incorrect as it does not mention 'DT139', which is the correct program for 'SO Price book maintain'. It provides an incorrect program name and context, making it mostly irrelevant to the question. The answer is somewhat coherent, but it fails to address the correct information, leading to low scores in correctness, completeness, and relevance.
+- **CR Pricebook**（在第1頁）
+- **B2b Pricebook**（在第1頁）
+- **EDI Label Info**（在第1頁）
+
+然而，**SO Price book maintain** 這個項目並未在任何頁面中出現。因此，根據目前提供的資料，無法確定其具體對應的程式。
+
+**結論：** 文件中未提及「SO Price book maintain」，故無法回答其對應的程式。
+
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
+
+**Retrieved Pages:** (2, 14)
+
+**Expected Pages:** (2, 5), (2, 12)
+
+**Reasoning:** The generated answer is incorrect as it fails to identify 'DT139' as the program for 'SO Price book maintain'. It does not cover any key points from the reference answer, which is simply the program name. The relevance is somewhat maintained as it attempts to address the question but ultimately provides incorrect information. The coherence is relatively high as the answer is well-structured and easy to follow, despite being incorrect. Overall, the generated answer does not fulfill the task requirements effectively.
 
 ---
 
@@ -521,23 +632,24 @@
 
 **Expected Answer:** DR004
 
-**Generated Answer:** 要查詢「Part No」在各個庫存（庫存庫）的現有數量，通常需要使用 **企業資源規劃（ERP）系統** 或 **庫存管理系統（Inventory Management System）**，這些系統會整合各個倉庫的數據，並提供查詢功能。
+**Generated Answer:** 根據提供的圖像內容，**沒有直接顯示任何程式或功能可以查詢 Part No 在各個庫的庫存**。
 
-以下是常見的程式或系統，可用來查詢 Part No 在各庫存的庫存：
+圖像內容主要說明的是如何在 **ARCMS 5** 系統中 **匯入 Excel 檔案** 來更新 Purchase Request (PR) 的「Item」欄位（如 Part No、Stock Room、Qty 等），並非查詢庫存的工具。
 
----
+圖像中顯示的步驟包括：
+- 在 PR 詳情頁面的「Detail」區塊，將「Part No」欄位的值從 Excel 檔案中匯入。
+- 在匯入設定中，將「Stock Room」欄位與 Excel 中的資料對應。
+- 透過「Update Destination」更新 PR 的資料。
 
-## ✅ 1. **ERP 系統（最常見）**
+這些操作是 **資料輸入與更新**，而非 **查詢**。圖像中也沒有出現任何「查詢庫存」、「庫存查詢
 
-### 常見 ERP 系統：
-- **SAP ERP**  
-  → 使用「Inventory Management」模組，可查詢「Material Master」與「Stock Overview」，支援多倉庫查詢。
-  → 用語：`Material Number` 或 `Part No`，查詢 `Stock Location` 或 `Warehouse`。
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
-- **Oracle NetSuite / Oracle ERP Cloud**  
-  → 提供「Inventory」→「Items」→「Stock
+**Retrieved Pages:** (0, 15)
 
-**Reasoning:** The GENERATED ANSWER does not mention the specific program 'DR004' as stated in the REFERENCE ANSWER, which is crucial for correctness and completeness. It instead provides a general explanation about ERP and inventory management systems, which is somewhat relevant but not directly answering the question. The coherence is relatively high as the answer is well-structured and easy to follow, but it lacks the specific information required by the question.
+**Expected Pages:** (2, 1), (2, 8)
+
+**Reasoning:** The generated answer is incorrect as it does not mention DR004, which is the correct program for querying part numbers in various inventories. It focuses on a different system (ARCMS 5) and task (importing Excel files), which is irrelevant to the question. The answer is somewhat coherent but fails to address the question directly, leading to low scores in correctness, completeness, and relevance.
 
 ---
 
@@ -547,21 +659,20 @@
 
 **Expected Answer:** DR005
 
-**Generated Answer:** 根據提供的文件內容，**沒有明確提到任何程式或功能可以直接查詢料號在所有倉庫的交易記錄或單據異動**。
+**Generated Answer:** 根據提供的文件內容，**沒有提及任何程式或功能可以查詢料號在所有倉庫的交易記錄或單據異動**。
 
-文件內容主要涵蓋的是：
+文件主要說明了以下兩項功能：
+1.  **V5 toolbar 大小圖示修改**：這是一個關於使用者介面（UI）工具列（toolbar）顯示大小的設定，並說明了「不勾選」小圖示時，需「改完存檔後，要關閉 V5 重開才會生效」。這屬於介面外觀調整，與查詢交易記錄無關。
+2.  **System style（系統模式）設定**：這是一個關於系統外觀主題的設定，例如「Office201LightGray」，同樣屬於介面美化，不涉及業務數據查詢。
 
-- DT022（Order Ack）的資料要求與注意事項
-- confirm ship 的操作與相關設定（如 DT201 修改客戶資料）
-- 在 keyin so sent B2B 時 Ship 欄位的設定與 shipment no 的問題
-- Qty Avail、Qty Allocate、Qty Onhand 的欄位說明
-- Schedule Forwarder To address 未定義時的錯誤處理
-- price hold 不走 e-approve 的設定（需改 AUTOAPPR）
-- 什麼條件下會出現 Allocate Virtual（如 AT009、CT003、part no 屬性等）
-- Schedule Forwarder To address not defined 的錯誤
+因此，根據這份文件，無法找到符合「查詢料號在所有倉的交易記錄或單據異動」需求的程式。這
 
-**重點是：文件中沒有提及任何「查詢料號在
+**Retrieval:** ✗ Miss | Recall: 0.00 | MRR: 0.00
 
-**Reasoning:** The generated answer is incorrect as it states that there is no program mentioned for querying transaction records, while the reference answer clearly states 'DR005' as the program. The generated answer does not cover any key points from the reference answer, making it incomplete. It is somewhat relevant as it attempts to address the question but ultimately fails to provide the correct information. The coherence is moderate as the answer is structured but does not provide the necessary information. Overall, the generated answer fails to meet the requirements of the question.
+**Retrieved Pages:** (0, 1)
+
+**Expected Pages:** (2, 1), (2, 8)
+
+**Reasoning:** The generated answer is incorrect as it states that the document does not mention any program for querying transaction records, while the reference answer clearly states 'DR005' as the program. The generated answer is missing the key point entirely, making it incomplete. It is somewhat relevant as it attempts to address the question but fails to provide the correct information. The coherence is moderate as the answer is structured and understandable, but it does not provide the correct or complete information.
 
 ---

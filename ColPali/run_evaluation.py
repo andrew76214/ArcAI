@@ -124,6 +124,11 @@ def main():
     for metric, value in report.aggregate_generation_metrics.items():
         print(f"  {metric}: {value:.4f}")
 
+    if report.aggregate_retrieval_metrics:
+        print("\nRetrieval Metrics:")
+        for metric, value in report.aggregate_retrieval_metrics.items():
+            print(f"  {metric}: {value:.4f}")
+
     # Calculate average latency
     avg_latency = sum(r.latency_ms for r in report.individual_results) / len(
         report.individual_results

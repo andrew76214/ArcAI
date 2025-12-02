@@ -25,7 +25,7 @@ class StorageConfig:
 @dataclass
 class RAGConfig:
     """Configuration for RAG operations."""
-    default_top_k: int = 3
+    default_top_k: int = 1
     default_max_new_tokens: int = 200
     # Page overlap: include adjacent pages for cross-page content
     pages_before: int = 1  # Number of pages to include before each result

@@ -97,14 +97,13 @@ class RAGEvaluator:
             generated_answer=query_result.answer,
         )
 
-        # Calculate retrieval metrics if expected pages are provided
-        retrieval_metrics = None
-        if test_case.expected_pages:
-            retrieval_result = calculate_retrieval_metrics(
-                retrieved_pages=query_result.retrieved_pages,
-                expected_pages=test_case.expected_pages,
-            )
-            retrieval_metrics = retrieval_result.to_dict()
+        # Calculate retrieval metrics
+        # Always record retrieved pages; calculate full metrics if expected pages provided
+        retrieval_result = calculate_retrieval_metrics(
+            retrieved_pages=query_result.retrieved_pages,
+            expected_pages=test_case.expected_pages or [],
+        )
+        retrieval_metrics = retrieval_result.to_dict()
 
         return EvaluationResult(
             test_case_id=test_case.id,
@@ -151,24 +150,23 @@ class RAGEvaluator:
                 )
             )
 
-            # Aggregate retrieval metrics if available
-            if result.retrieval_metrics:
-                retrieval_agg.add_result(
-                    RetrievalEvalResult(
-                        retrieved_pages=[
-                            (p["doc_id"], p["page_num"])
-                            for p in result.retrieval_metrics["retrieved_pages"]
-                        ],
-                        expected_pages=[
-                            (p["doc_id"], p["page_num"])
-                            for p in result.retrieval_metrics["expected_pages"]
-                        ],
-                        hit=result.retrieval_metrics["hit"],
-                        recall=result.retrieval_metrics["recall"],
-                        precision=result.retrieval_metrics["precision"],
-                        mrr=result.retrieval_metrics["mrr"],
-                    )
+            # Aggregate retrieval metrics
+            retrieval_agg.add_result(
+                RetrievalEvalResult(
+                    retrieved_pages=[
+                        (p["doc_id"], p["page_num"])
+                        for p in result.retrieval_metrics["retrieved_pages"]
+                    ],
+                    expected_pages=[
+                        (p["doc_id"], p["page_num"])
+                        for p in result.retrieval_metrics["expected_pages"]
+                    ],
+                    hit=result.retrieval_metrics["hit"],
+                    recall=result.retrieval_metrics["recall"],
+                    precision=result.retrieval_metrics["precision"],
+                    mrr=result.retrieval_metrics["mrr"],
                 )
+            )
 
             if progress_callback:
                 progress_callback(i + 1, len(dataset.test_cases))
@@ -202,12 +200,10 @@ class RAGEvaluator:
             "generated_answer": result.generated_answer,
             "expected_answer": result.expected_answer,
             "generation_metrics": result.generation_metrics,
+            "retrieval_metrics": result.retrieval_metrics,
             "latency_ms": result.latency_ms,
             "metadata": result.metadata,
         }
-
-        if result.retrieval_metrics:
-            data["retrieval_metrics"] = result.retrieval_metrics
 
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)

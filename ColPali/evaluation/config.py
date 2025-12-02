@@ -8,9 +8,9 @@ class JudgeConfig:
     """Configuration for LLM-as-a-Judge."""
 
     # Judge type: "ollama" or "openai"
-    judge_type: Literal["ollama", "openai"] = "ollama"
+    judge_type: Literal["ollama", "openai"] = "openai"
     # Model name (e.g., "llama3.1:8b" for Ollama, "gpt-4o" for OpenAI)
-    model_name: str = "llama3.1:8b"
+    model_name: str = "gpt-5.1"
     # API key environment variable (only for OpenAI)
     api_key_env_var: str = "OPENAI_API_KEY"
     # Ollama server URL
