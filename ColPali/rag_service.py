@@ -1,12 +1,20 @@
 """High-level RAG orchestration service.
 
-Replaces global _INDEXED_RAG state with proper encapsulation.
-Manages model lifecycle and provides clean API for RAG operations.
+Manages model lifecycle and provides clean API for RAG operations
+using ColPali embeddings stored in Qdrant vector database.
 """
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 
 from PIL import Image
+
+from config import AppConfig, get_config
+from models.loader import ModelLoader
+from models.colpali_embedder import ColPaliEmbedder
+from models.retrieval_model import RetrievalModel
+from models.vision_model import VisionLanguageModel
+from storage.vector_store import QdrantVectorStore
+from storage.converter import convert_pdfs_to_images, list_available_files
 
 
 @dataclass
@@ -20,18 +28,12 @@ class QueryResult:
     # Retrieved pages after overlap expansion
     expanded_pages: List[Tuple[int, int]] = field(default_factory=list)
 
-from config import AppConfig, get_config
-from models.loader import ModelLoader
-from models.retrieval_model import RetrievalModel
-from models.vision_model import VisionLanguageModel
-from storage.converter import convert_pdfs_to_images, list_available_files
-
 
 class RAGService:
     """High-level RAG orchestration service.
 
     Manages model lifecycle and provides unified API for:
-    - Document indexing
+    - Document indexing with ColPali + Qdrant
     - Query execution with retrieval and generation
     """
 
@@ -58,14 +60,18 @@ class RAGService:
         return self._retrieval_model is not None and self._retrieval_model.is_indexed
 
     def initialize_retrieval(self) -> None:
-        """Load retrieval model (lazy initialization)."""
+        """Load retrieval model and initialize Qdrant (lazy initialization)."""
         if self._retrieval_model is None:
-            raw_model = self._loader.load_retrieval_model()
-            self._retrieval_model = RetrievalModel(raw_model)
-            
-            # Check if index already exists
-            if self._retrieval_model._check_existing_index(self.config.storage.index_name):
-                self._retrieval_model._indexed = True
+            # Load ColPali model and processor
+            model, processor = self._loader.load_colpali_model()
+            embedder = ColPaliEmbedder(model, processor)
+
+            # Initialize Qdrant vector store
+            vector_store = QdrantVectorStore(self.config.qdrant)
+
+            # Create retrieval model
+            self._retrieval_model = RetrievalModel(embedder, vector_store)
+            self._retrieval_model.initialize()
 
     def initialize_vl(self) -> None:
         """Load vision-language model (lazy initialization)."""
@@ -92,16 +98,18 @@ class RAGService:
         if not files:
             return "No supported files found to index."
 
+        # Initialize retrieval model if needed
         self.initialize_retrieval()
-        self._retrieval_model.index(
-            input_path=folder,
-            index_name=self.config.storage.index_name,
-            overwrite=overwrite,
-        )
 
-        # Cache converted images for later retrieval
+        # Convert PDFs/images to PIL images
         self._all_images = convert_pdfs_to_images(
             folder, self.config.storage.supported_extensions
+        )
+
+        # Index images with Qdrant
+        self._retrieval_model.index(
+            images=self._all_images,
+            overwrite=overwrite,
         )
 
         return f"Indexed {len(files)} file(s) from {folder}."

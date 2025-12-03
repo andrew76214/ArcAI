@@ -4,10 +4,13 @@ matplotlib
 Pillow
 transformers
 torch
-byaldi
 qwen_vl_utils
 accelerate
 sentencepiece
 tokenizers
 gradio
 openai>=1.0.0
+# Qdrant vector database
+qdrant-client>=1.7.0
+# ColPali direct model access
+colpali-engine>=0.3.0

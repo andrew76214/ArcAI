@@ -1,6 +1,6 @@
 """Centralized configuration for ColPali application."""
 from dataclasses import dataclass, field
-from typing import Dict, Tuple
+from typing import Dict, Optional, Tuple
 
 
 @dataclass
@@ -17,9 +17,19 @@ class ModelConfig:
 class StorageConfig:
     """Configuration for file storage."""
     data_dir: str = "data"
-    index_name: str = "image_index"
     supported_extensions: Tuple[str, ...] = (".pdf", ".png", ".jpg", ".jpeg")
     chunk_size: int = 8192
+
+
+@dataclass
+class QdrantConfig:
+    """Configuration for Qdrant vector database."""
+    host: str = "localhost"
+    port: int = 6333
+    collection_name: str = "colpali_documents"
+    vector_size: int = 128  # ColPali embedding dimension
+    use_memory: bool = True  # Use in-memory storage for development
+    persist_directory: Optional[str] = "qdrant_data"
 
 
 @dataclass
@@ -37,6 +47,7 @@ class AppConfig:
     """Main application configuration."""
     model: ModelConfig = field(default_factory=ModelConfig)
     storage: StorageConfig = field(default_factory=StorageConfig)
+    qdrant: QdrantConfig = field(default_factory=QdrantConfig)
     rag: RAGConfig = field(default_factory=RAGConfig)
 
 

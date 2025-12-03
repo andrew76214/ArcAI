@@ -1,6 +1,7 @@
 """Storage module for file operations."""
 from .downloader import download_file, download_pdfs, add_file_to_storage
 from .converter import convert_pdfs_to_images, list_available_files
+from .vector_store import QdrantVectorStore
 
 __all__ = [
     "download_file",
@@ -8,4 +9,5 @@ __all__ = [
     "add_file_to_storage",
     "convert_pdfs_to_images",
     "list_available_files",
+    "QdrantVectorStore",
 ]

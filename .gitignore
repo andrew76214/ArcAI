@@ -206,3 +206,4 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 ColPali/.gradio/
+ColPali/qdrant_data/.lock

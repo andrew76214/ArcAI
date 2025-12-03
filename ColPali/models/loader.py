@@ -1,8 +1,8 @@
 """Model loading utilities with lazy loading support."""
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Tuple
 
 if TYPE_CHECKING:
-    from byaldi import RAGMultiModalModel
+    from colpali_engine.models import ColPali, ColPaliProcessor
     from transformers import Qwen3VLForConditionalGeneration, Qwen3VLProcessor
 
 from config import ModelConfig
@@ -20,23 +20,37 @@ class ModelLoader:
     def __init__(self, config: ModelConfig):
         self.config = config
 
-    def load_retrieval_model(self) -> "RAGMultiModalModel":
-        """Load the ColPali retrieval model.
+    def load_colpali_model(self) -> Tuple["ColPali", "ColPaliProcessor"]:
+        """Load the ColPali model and processor directly.
 
         Returns:
-            Loaded RAGMultiModalModel
+            Tuple of (model, processor)
 
         Raises:
             ModelLoadError: If import or loading fails
         """
         try:
-            from byaldi import RAGMultiModalModel
+            from colpali_engine.models import ColPali, ColPaliProcessor
+            import torch
         except ImportError as e:
             raise ModelLoadError(
-                "Failed to import 'byaldi'. Install it with: pip install byaldi"
+                "Failed to import colpali_engine. "
+                "Install it with: pip install colpali-engine"
             ) from e
 
-        return RAGMultiModalModel.from_pretrained(self.config.retrieval_model_name)
+        dtype = torch.bfloat16 if hasattr(torch, "bfloat16") else torch.float16
+
+        model = ColPali.from_pretrained(
+            self.config.retrieval_model_name,
+            dtype=dtype,
+            device_map="auto",
+        ).eval()
+
+        processor = ColPaliProcessor.from_pretrained(
+            self.config.retrieval_model_name
+        )
+
+        return model, processor
 
     def load_vl_model(self) -> "Qwen3VLForConditionalGeneration":
         """Load the Qwen3 Vision-Language model.
